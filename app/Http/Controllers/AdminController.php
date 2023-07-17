@@ -10,6 +10,7 @@ use App\Models\CoachU15;
 use App\Models\CoachU16;
 use App\Models\CoachU17;
 use App\Models\CoachU18;
+use App\Models\Lider;
 use App\Models\MainPageNews;
 use App\Models\News;
 use App\Models\u11;
@@ -554,5 +555,31 @@ class AdminController extends Controller
             'all'=>$get,
             'coach'=>$getCoach
         ]);
+    }
+
+    # add lider
+    public function liderAdd(Request $req) {
+        $validation = Validator::make($req->all(), [
+            'name'=>['required'],
+            'birthday'=>['required'],
+            'file'=>['required', 'file'],
+            'rank'=>['required'],
+        ]);
+
+        if($validation->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        #insert data
+        $req->file('file')->store('public/images');
+
+        Lider::create([
+            'name'=>$req->input('name'),
+            'rank'=>$req->input('rank'),
+            'birthday'=>$req->input('birthday'),
+            'image'=>$req->file('file')->hashName(),
+        ]);
+
+        return redirect()->back()->with('success', 'Raxbariyat a\'zosi qo\'shildi');
     }
 }
