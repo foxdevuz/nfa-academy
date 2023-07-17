@@ -10,6 +10,7 @@ use App\Models\CoachU15;
 use App\Models\CoachU16;
 use App\Models\CoachU17;
 use App\Models\CoachU18;
+use App\Models\Doctor;
 use App\Models\Lider;
 use App\Models\MainPageNews;
 use App\Models\News;
@@ -66,6 +67,12 @@ class AdminController extends Controller
         Storage::delete('public/images/'.$find->file);
         $find->delete();
         return redirect('/admin/mainPageNew')->with('success', 'Ma\'lumot o\'chirildi');
+    }
+    public function addDoc() {
+        return view('admin.docs');
+    }
+    public function addCoach() {
+        return 
     }
     #add news
     public function addNews() {
@@ -509,6 +516,25 @@ class AdminController extends Controller
         $find->delete();
         return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
     }
+    public function delDocBackend(Request $request) {
+        $validate = Validator::make($request->all(), [
+            'id'=>['required']
+        ]);
+
+        if($validate->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        $find = Doctor::find($request->input('id'));
+
+        if(!$find){
+            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+        }
+
+        Storage::delete('public/images/'.$find->file);
+        $find->delete();
+        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+    }
     #redirect for database
     public function showU11() {
         $get = u11::all();
@@ -580,7 +606,13 @@ class AdminController extends Controller
             'lider'=>$get
         ]);
     }
-    # add lider
+    public function showDoctor() {
+        $get = Doctor::all();
+        return view('admin.showDoctor', [
+            'doctor'=>$get
+        ]);
+    }
+    # add
     public function liderAdd(Request $req) {
         $validation = Validator::make($req->all(), [
             'name'=>['required'],
@@ -605,4 +637,27 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Raxbariyat a\'zosi qo\'shildi');
     }
+    public function addDocBackend(Request $req) {
+        $validation = Validator::make($req->all(), [
+            'name'=>['required'],
+            'birthday'=>['required'],
+            'file'=>['required', 'file'],
+        ]);
+
+        if($validation->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        #insert data
+        $req->file('file')->store('public/images');
+
+        Doctor::create([
+            'name'=>$req->input('name'),
+            'birthday'=>$req->input('birthday'),
+            'image'=>$req->file('file')->hashName(),
+        ]);
+
+        return redirect()->back()->with('success', 'Shifokor qo\'shildi');
+    }
+
 }

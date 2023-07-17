@@ -94,6 +94,7 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/mainPageNew">Asosiy qism yangiligi</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/allNews">Barcha yangiliklar</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showLider">Raxbariyat a'zolari</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showDoctors">Shifokorlar</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU11">U11</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU12">U12</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU13">U13</a></li>

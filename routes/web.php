@@ -26,6 +26,8 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/club/u17', [AdminController::class, 'u17']);
     Route::get('/admin/club/u18', [AdminController::class, 'u18']);
     Route::get('/admin/addLider', [DirectionController::class, 'addLiders']);
+    Route::get('/admin/addDoc', [AdminController::class, 'addDoc']);
+    Route::get('/admin/addCoach', [AdminController::class, 'addCoach']);
     #show for database
     Route::get('/admin/showU11', [AdminController::class, 'showU11']);
     Route::get('/admin/showU12', [AdminController::class, 'showU12']);
@@ -36,10 +38,12 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/showU17', [AdminController::class, 'showU17']);
     Route::get('/admin/showU18', [AdminController::class, 'showU18']);
     Route::get('/admin/showLider', [AdminController::class, 'showLider']);
+    Route::get('/admin/showDoctors', [AdminController::class, 'showDoctor']);
     #delete data
     Route::get('/club/delete', [ClubController::class, 'deleteClubMember']);
     Route::get('/coach/delete', [ClubController::class, 'deleteCoach']);
     Route::get('/lider/delete', [AdminController::class, 'deleteLider']);
+    Route::get('/doctors/delete', [AdminController::class, 'delDocBackend']);
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -62,6 +66,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/u18Coach', [AdminController::class, 'u18CoachBackend']);
     Route::post('/u18Members', [AdminController::class, 'u18StudentBackend']);
     Route::post('/addLider', [AdminController::class, 'liderAdd']);
+    Route::post('/addDoc', [AdminController::class, 'addDocBackend']);
 });
 
 Route::get('/login', [AdminLoginController::class, 'login']);
