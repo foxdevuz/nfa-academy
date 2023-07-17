@@ -490,7 +490,25 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'O\'quvchi qo\'shildi!!!');
     }
+    public function deleteLider(Request $request) {
+        $validate = Validator::make($request->all(), [
+            'id'=>['required']
+        ]);
 
+        if($validate->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        $find = Lider::find($request->input('id'));
+
+        if(!$find){
+            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+        }
+
+        Storage::delete('public/images/'.$find->file);
+        $find->delete();
+        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+    }
     #redirect for database
     public function showU11() {
         $get = u11::all();
@@ -556,7 +574,12 @@ class AdminController extends Controller
             'coach'=>$getCoach
         ]);
     }
-
+    public function showLider() {
+        $get = Lider::all();
+        return view('admin.showLider', [
+            'lider'=>$get
+        ]);
+    }
     # add lider
     public function liderAdd(Request $req) {
         $validation = Validator::make($req->all(), [

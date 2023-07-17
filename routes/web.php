@@ -35,9 +35,11 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/showU16', [AdminController::class, 'showU16']);
     Route::get('/admin/showU17', [AdminController::class, 'showU17']);
     Route::get('/admin/showU18', [AdminController::class, 'showU18']);
+    Route::get('/admin/showLider', [AdminController::class, 'showLider']);
     #delete data
     Route::get('/club/delete', [ClubController::class, 'deleteClubMember']);
     Route::get('/coach/delete', [ClubController::class, 'deleteCoach']);
+    Route::get('/lider/delete', [AdminController::class, 'deleteLider']);
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
