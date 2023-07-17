@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Coach;
 use App\Models\CoachU11;
 use App\Models\CoachU12;
 use App\Models\CoachU13;
@@ -72,7 +73,7 @@ class AdminController extends Controller
         return view('admin.docs');
     }
     public function addCoach() {
-        return 
+        return view('admin.coach');
     }
     #add news
     public function addNews() {
@@ -144,7 +145,7 @@ class AdminController extends Controller
         return view('admin.u18');
     }
 
-    # club backend
+    #backend
     public function u11CoachBackend(Request $request) {
         $validation = Validator::make($request->all(), [
             'coach'=>['required'],
@@ -535,6 +536,47 @@ class AdminController extends Controller
         $find->delete();
         return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
     }
+    public function addCoachBackend(Request $req) {
+        $validation = Validator::make($req->all(), [
+            'name'=>['required'],
+            'birthday'=>['required'],
+            'file'=>['required', 'file'],
+        ]);
+
+        if($validation->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        #insert data
+        $req->file('file')->store('public/images');
+
+        Coach::create([
+            'name'=>$req->input('name'),
+            'birthday'=>$req->input('birthday'),
+            'image'=>$req->file('file')->hashName(),
+        ]);
+
+        return redirect()->back()->with('success', 'Murabbiy a\'zosi qo\'shildi');
+    }
+    public function delCoachBackend(Request $request) {
+        $validate = Validator::make($request->all(), [
+            'id'=>['required']
+        ]);
+
+        if($validate->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        $find = Coach::find($request->input('id'));
+
+        if(!$find){
+            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+        }
+
+        Storage::delete('public/images/'.$find->file);
+        $find->delete();
+        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+    }
     #redirect for database
     public function showU11() {
         $get = u11::all();
@@ -610,6 +652,12 @@ class AdminController extends Controller
         $get = Doctor::all();
         return view('admin.showDoctor', [
             'doctor'=>$get
+        ]);
+    }
+    public function showCoach() {
+        $get = Coach::all();
+        return view('admin.showCoach', [
+            'coach'=>$get
         ]);
     }
     # add

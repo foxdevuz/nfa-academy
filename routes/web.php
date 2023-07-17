@@ -39,11 +39,13 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/showU18', [AdminController::class, 'showU18']);
     Route::get('/admin/showLider', [AdminController::class, 'showLider']);
     Route::get('/admin/showDoctors', [AdminController::class, 'showDoctor']);
+    Route::get('/admin/showCoach', [AdminController::class, 'showCoach']);
     #delete data
     Route::get('/club/delete', [ClubController::class, 'deleteClubMember']);
     Route::get('/coach/delete', [ClubController::class, 'deleteCoach']);
     Route::get('/lider/delete', [AdminController::class, 'deleteLider']);
     Route::get('/doctors/delete', [AdminController::class, 'delDocBackend']);
+    Route::get('/coach/delete', [AdminController::class, 'delCoachBackend']);
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -67,6 +69,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/u18Members', [AdminController::class, 'u18StudentBackend']);
     Route::post('/addLider', [AdminController::class, 'liderAdd']);
     Route::post('/addDoc', [AdminController::class, 'addDocBackend']);
+    Route::post('/addCoach', [AdminController::class, 'addCoachBackend']);
 });
 
 Route::get('/login', [AdminLoginController::class, 'login']);
