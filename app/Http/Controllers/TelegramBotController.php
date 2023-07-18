@@ -9,7 +9,7 @@ class TelegramBotController extends Controller
 {
 
     private function bot($method, $datas=[]){
-        $url = "https://api.telegram.org/bot6208679769:AAH7yge30QxKIKzlu6uvGo6BmH8GPQ_cgzY/".$method;
+        $url = "https://api.telegram.org/bot" . env('BOT_TOKEN') . "/".$method;
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
