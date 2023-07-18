@@ -13,23 +13,18 @@
     <div class="navbar-nav ms-auto mx-lg-auto py-0">
         <a href="/" class="nav-item nav-link">Asosiy</a>
         <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yangiliklar</a>
-        <div class="dropdown-menu m-0">
-            <a href="/breaking-news" class="dropdown-item">Songi Yangiliklar</a>
-            <a href="/football-news" class="dropdown-item">Futbol yangiliklar <a>
+        <a href="/breaking-news" class="nav-link">Yangiliklar</a>
         </div>
-        </div>
-        <a href="/club/news" class="nav-item nav-link">Akademiya yangiliklari</a>
         <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jamoalar</a>
         <div class="dropdown-menu m-0" style="background: #ffffff;">
-            <a href="/club/type/u11" class="dropdown-item">U-11</a>
-            <a href="/club/type/u12" class="dropdown-item">U-12</a>
-            <a href="/club/type/u13" class="dropdown-item">U-13</a>
-            <a href="/club/type/u14" class="dropdown-item">U-14</a>
-            <a href="/club/type/u15" class="dropdown-item">U-15</a>
-            <a href="/club/type/u16" class="dropdown-item">U-16</a>
-            <a href="/club/type/u17" class="dropdown-item">U-17</a>
+            <a href="/club/type?id=u11" class="dropdown-item">U-11</a>
+            <a href="/club/type?id=u12" class="dropdown-item">U-12</a>
+            <a href="/club/type?id=u13" class="dropdown-item">U-13</a>
+            <a href="/club/type?id=u14" class="dropdown-item">U-14</a>
+            <a href="/club/type?id=u15" class="dropdown-item">U-15</a>
+            <a href="/club/type?id=u16" class="dropdown-item">U-16</a>
+            <a href="/club/type?id=u17" class="dropdown-item">U-17</a>
         </div>
         </div>
         <a href="/club/history" class="nav-item nav-link">Akademiya tarixi</a>

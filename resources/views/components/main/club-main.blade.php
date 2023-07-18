@@ -1,4 +1,4 @@
-@props(['news'])
+@props(['news', 'event'])
 <div class="container-fluid bg-dark py-5 hero-header" style="background-image: url('/storage/images/{{ $news[0]->file }}'); position:relative;">
     <div class="container py-5">
         <div class="row justify-content-start">
@@ -9,6 +9,8 @@
                 </h1>
             </div>
         </div>
-        <button class="event-btn">Hello world</button>
+        @if ($event)
+            <button class="event-btn">{{ $event->event }} | {{ $event->time }}</button>
+        @endif
     </div>
 </div>

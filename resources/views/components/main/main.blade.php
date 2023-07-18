@@ -23,6 +23,39 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet"/>
         <!-- Template Stylesheet -->
         <link href="/css/style.css" rel="stylesheet"/>
+        <style>
+            /* Custom dark mode styles */
+            .ck.ck-editor {
+                background-color: #333;
+                color: #fff;
+            }
+
+            .ck.ck-editor__editable {
+                color: #000;
+                height: 250px;
+            }
+            /* ===== Scrollbar CSS ===== */
+            /* Firefox */
+            * {
+                scrollbar-width: auto;
+                scrollbar-color: #515157 #ffffff;
+            }
+
+            /* Chrome, Edge, and Safari */
+            *::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            *::-webkit-scrollbar-track {
+                background: #ffffff;
+            }
+
+            *::-webkit-scrollbar-thumb {
+                background-color: #515157;
+                border-radius: 1px;
+                /* border: 3px solid #ffffff; */
+            }
+        </style>
     </head>
     <body>
         <x-extra.main-extra.site-name/>

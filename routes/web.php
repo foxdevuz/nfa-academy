@@ -16,6 +16,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/addNews', [AdminController::class, 'addNews']);
     Route::get('/admin/allNews', [AdminController::class, 'showNews']);
     Route::get('/news/delete', [AdminController::class, 'destroyNews']);
+
     Route::get('/admin/club/u11', [AdminController::class, 'u11']);
     Route::get('/admin/club/u12', [AdminController::class, 'u12']);
     Route::get('/admin/club/u13', [AdminController::class, 'u13']);
@@ -79,14 +80,9 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/addEvent', [AdminController::class, 'addEventBG']);
 });
 
-Route::get('/login', [AdminLoginController::class, 'login']);
-
-Route::get('/breaking-news', [DirectionController::class, 'breakingNews']);
-Route::get('/football-news', [DirectionController::class, 'footballNews']);
-
 Route::group(['prefix' => 'club'], function () {
     Route::get('/news', [DirectionController::class, 'clubNews']);
-    Route::get('/type/{type}', [DirectionController::class, 'u11']);
+    Route::get('/type', [DirectionController::class, 'u11']);
     Route::get('/history', [DirectionController::class, 'clubHistory']);
     Route::get('/liders', [DirectionController::class, 'lider']);
     Route::get('/doctors', [DirectionController::class, 'doctors']);
@@ -94,5 +90,8 @@ Route::group(['prefix' => 'club'], function () {
 });
 
 Route::get('/contact', [DirectionController::class, 'contact']);
-
 Route::post('/login', [AdminLoginController::class, 'loginSession']);
+
+Route::get('/login', [AdminLoginController::class, 'login']);
+Route::get('/breaking-news', [DirectionController::class, 'breakingNews']);
+Route::get('/news', [DirectionController::class, 'showNews']);

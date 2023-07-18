@@ -5,7 +5,7 @@
                 <div
                     class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
                     <div id="map"></div>
-                    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+                    <script src="//api-maps.yandex.ru/2.1/?lang=uz_UZ" type="text/javascript"></script>
                 </div>
             </div>
             <div class="col-lg-8 col-md-6">
@@ -24,14 +24,6 @@
                         <div class="d-flex mb-2">
                             <i class="bi bi-telephone text-primary me-2"></i>
                             <a href="tel:+998 69-224-86-75" style="color: #ffffff;">+998 69-224-86-75</a>
-                        </div>
-                        <div class="d-flex mt-4">
-                            <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i
-                                    class="fab fa-twitter fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i
-                                    class="fab fa-facebook-f fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i
-                                    class="fab fa-linkedin-in fw-normal"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -59,8 +51,7 @@
                                 Rahbariyat
                             </a>
                             <a class="text-secondary mb-2" href="#">
-                                </a><i class="bi bi-arrow-right text-primary me-2"></i>
-                                Aloqa
+                                <i class="bi bi-arrow-right text-primary me-2"></i>Aloqa
                             </a>
                         </div>
                     </div>

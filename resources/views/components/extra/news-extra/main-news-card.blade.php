@@ -1,5 +1,5 @@
 @props(['news'])
-<a class="col-lg-6" href="/news/{{ $news->id }}">
+<a class="col-lg-6" href="/news?id={{ $news->id }}">
     <div class="col-lg-10">
         <div class="d-flex h-100">
             <div class="flex-shrink-0 box">

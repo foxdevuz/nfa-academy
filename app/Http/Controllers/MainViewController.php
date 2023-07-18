@@ -13,7 +13,18 @@ class MainViewController extends Controller
             'clubMain' => MainPageNews::latest()->get(),
             'news'=>News::inRandomOrder()->get(),
             'famous'=>Famous::all(),
-            'birthday'=>BirthdayController::birthday()
+            'birthday'=>BirthdayController::birthday(),
+            'event'=>EventController::event()
         ]);
     }
+    public static function breakingNews()
+    {
+        $get = News::inRandomOrder()->paginate(10);
+        return $get;
+    }
+    public static function showNews($id) {
+        $get = News::find($id);
+        return $get;
+    }
+
 }

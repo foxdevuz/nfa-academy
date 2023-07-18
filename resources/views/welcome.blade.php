@@ -1,5 +1,5 @@
 <x-main.main>
-    <x-main.club-main :news="$clubMain"/>
+    <x-main.club-main :news="$clubMain" :event="$event"/>
     <x-extra.main-extra.short-news :shortNews="$news"/>
     @foreach ($famous as $item)
         <x-main.famous-players :famous="$item"/>

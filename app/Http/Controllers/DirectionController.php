@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 class DirectionController extends Controller
 {
     public function breakingNews() {
-        return view('extra.breakingNews');
+        return view('extra.breakingNews', [
+            'news'=>MainViewController::breakingNews()
+        ]);
     }
-    public function footballNews() {
-        return view('extra.footballNews');
+    public function showNews(Request $req) {
+        return view('extra.idpage', [
+            'news'=>MainViewController::showNews($req->input('id'))
+        ]);
     }
     public function clubNews() {
         return view('extra.clubNews');

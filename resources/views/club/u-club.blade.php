@@ -11,8 +11,6 @@
                             <x-extra.club-extra.coach/>
                             <x-extra.club-extra.coach/>
                         </div>
-
-
                     </div>
                 </div>
             </div>
