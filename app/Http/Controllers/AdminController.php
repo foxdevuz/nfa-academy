@@ -12,6 +12,7 @@ use App\Models\CoachU16;
 use App\Models\CoachU17;
 use App\Models\CoachU18;
 use App\Models\Doctor;
+use App\Models\Famous;
 use App\Models\Lider;
 use App\Models\MainPageNews;
 use App\Models\News;
@@ -144,7 +145,9 @@ class AdminController extends Controller
     public function u18() {
         return view('admin.u18');
     }
-
+    public function addFamous() {
+        return view('admin.famous');
+    }
     #backend
     public function u11CoachBackend(Request $request) {
         $validation = Validator::make($request->all(), [
@@ -577,6 +580,49 @@ class AdminController extends Controller
         $find->delete();
         return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
     }
+    public function delFamousBackend(Request $request) {
+        $validate = Validator::make($request->all(), [
+            'id'=>['required']
+        ]);
+
+        if($validate->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        $find = Famous::find($request->input('id'));
+
+        if(!$find){
+            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+        }
+
+        Storage::delete('public/images/'.$find->file);
+        $find->delete();
+        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+    }
+    public function addFamousBG(Request $req) {
+        $validation = Validator::make($req->all(), [
+            'name'=>['required'],
+            'birthday'=>['required'],
+            'about'=>['required'],
+            'file'=>['required', 'file'],
+        ]);
+
+        if($validation->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        #insert data
+        $req->file('file')->store('public/images');
+
+        Famous::create([
+            'name'=>$req->input('name'),
+            'birthday'=>$req->input('birthday'),
+            'about'=>$req->input('about'),
+            'image'=>$req->file('file')->hashName(),
+        ]);
+
+        return redirect()->back()->with('success', "Ma'lumot qo'shildi");
+    }
     #redirect for database
     public function showU11() {
         $get = u11::all();
@@ -658,6 +704,12 @@ class AdminController extends Controller
         $get = Coach::all();
         return view('admin.showCoach', [
             'coach'=>$get
+        ]);
+    }
+    public function showFamous() {
+        $get = Famous::all();
+        return view('admin.showFamous', [
+            'famous'=>$get
         ]);
     }
     # add

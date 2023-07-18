@@ -3,11 +3,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\DirectionController;
+use App\Http\Controllers\MainViewController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MainViewController::class, 'index']);
 
 #admin get Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -28,6 +27,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/addLider', [DirectionController::class, 'addLiders']);
     Route::get('/admin/addDoc', [AdminController::class, 'addDoc']);
     Route::get('/admin/addCoach', [AdminController::class, 'addCoach']);
+    Route::get('/admin/addFamous', [AdminController::class, 'addFamous']);
     #show for database
     Route::get('/admin/showU11', [AdminController::class, 'showU11']);
     Route::get('/admin/showU12', [AdminController::class, 'showU12']);
@@ -40,12 +40,14 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/showLider', [AdminController::class, 'showLider']);
     Route::get('/admin/showDoctors', [AdminController::class, 'showDoctor']);
     Route::get('/admin/showCoach', [AdminController::class, 'showCoach']);
+    Route::get('/admin/showFamous', [AdminController::class, 'showFamous']);
     #delete data
     Route::get('/club/delete', [ClubController::class, 'deleteClubMember']);
     Route::get('/coach/delete', [ClubController::class, 'deleteCoach']);
     Route::get('/lider/delete', [AdminController::class, 'deleteLider']);
     Route::get('/doctors/delete', [AdminController::class, 'delDocBackend']);
     Route::get('/coach/delete', [AdminController::class, 'delCoachBackend']);
+    Route::get('/famous/delete', [AdminController::class, 'delFamousBackend']);
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -70,6 +72,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/addLider', [AdminController::class, 'liderAdd']);
     Route::post('/addDoc', [AdminController::class, 'addDocBackend']);
     Route::post('/addCoach', [AdminController::class, 'addCoachBackend']);
+    Route::post('/addFamous', [AdminController::class, 'addFamousBG']);
 });
 
 Route::get('/login', [AdminLoginController::class, 'login']);
