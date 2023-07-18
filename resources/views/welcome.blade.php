@@ -1,4 +1,3 @@
-{{-- {{ dd($famous) }} --}}
 <x-main.main>
     <x-main.club-main :news="$clubMain"/>
     <x-extra.main-extra.short-news :shortNews="$news"/>

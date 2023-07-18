@@ -5,7 +5,19 @@
   --light: #ffffff;
   --dark: #2b2825;
 }
-
+.event-btn {
+    position: absolute;
+    left: 75%;
+    top: 91%;
+    padding: 15px 10px;
+    border-radius: 8px;
+    background: #e37b07;
+    border: none;
+    color: #fff;
+    font-style: bold;
+    font-size: 1.5rem;
+    width: max-content;
+}
 .font-secondary {
   font-family: "Pacifico", cursive;
 }
@@ -431,6 +443,19 @@ img {
     border: 1px solid red;
     display: none;
   }
+  .event-btn {
+    position: absolute;
+    left: 45%;
+    top: 91%;
+    padding: 15px 10px;
+    border-radius: 8px;
+    background: #e37b07;
+    border: none;
+    color: #fff;
+    font-style: bold;
+    font-size: 1.5rem;
+    width: max-content;
+}
 }
 
 #map {

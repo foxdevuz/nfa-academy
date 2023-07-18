@@ -44,6 +44,7 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/addDoc">Shifokor qo'shish</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/addCoach">Murabbiy qo'shish</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/addFamous">Klub Faxri qo'shish</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/addEvent">Voqea Qo'shish</a></li>
                         </ul>
                         </ul>
                     </li>
@@ -98,6 +99,7 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showDoctors">Shifokorlar</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showCoach">Murabbiylar</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showFamous">Klub Faxriylari</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showEvent">Voqealarni ko'rish</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU11">U11</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU12">U12</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU13">U13</a></li>

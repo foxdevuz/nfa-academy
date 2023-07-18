@@ -12,6 +12,7 @@ use App\Models\CoachU16;
 use App\Models\CoachU17;
 use App\Models\CoachU18;
 use App\Models\Doctor;
+use App\Models\Event;
 use App\Models\Famous;
 use App\Models\Lider;
 use App\Models\MainPageNews;
@@ -120,7 +121,9 @@ class AdminController extends Controller
         $find->delete();
         return redirect()->back()->with('success', 'Ma\'lumot o\'chirildi');
     }
-
+    public function addEvent() {
+        return view('admin.addEvent');
+    }
     #club direction
     public function u11() {
         return view('admin.u11');
@@ -600,6 +603,25 @@ class AdminController extends Controller
         $find->delete();
         return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
     }
+    public function delEventBg(Request $request) {
+        $validate = Validator::make($request->all(), [
+            'id'=>['required']
+        ]);
+
+        if($validate->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        $find = Event::find($request->input('id'));
+
+        if(!$find){
+            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+        }
+
+        Storage::delete('public/images/'.$find->file);
+        $find->delete();
+        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+    }
     public function addFamousBG(Request $req) {
         $validation = Validator::make($req->all(), [
             'name'=>['required'],
@@ -620,6 +642,23 @@ class AdminController extends Controller
             'birthday'=>$req->input('birthday'),
             'about'=>$req->input('about'),
             'image'=>$req->file('file')->hashName(),
+        ]);
+
+        return redirect()->back()->with('success', "Ma'lumot qo'shildi");
+    }
+    public function addEventBG(Request $req) {
+        $validation = Validator::make($req->all(), [
+            'event'=>['required'],
+            'time'=>['required'],
+        ]);
+
+        if($validation->fails()){
+            return redirect()->back()->with('error', 'Missing required fields');
+        }
+
+        Event::create([
+            'event'=>$req->input('event'),
+            'time'=>$req->input('time'),
         ]);
 
         return redirect()->back()->with('success', "Ma'lumot qo'shildi");
@@ -711,6 +750,12 @@ class AdminController extends Controller
         $get = Famous::all();
         return view('admin.showFamous', [
             'famous'=>$get
+        ]);
+    }
+    public function showEvent() {
+        $get = Event::all();
+        return view('admin.showEvent', [
+            'event'=>$get
         ]);
     }
     # add
