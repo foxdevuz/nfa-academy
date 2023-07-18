@@ -1,8 +1,12 @@
-{{-- {{ dd($clubMain, $news) }} --}}
+{{-- {{ dd($famous) }} --}}
 <x-main.main>
     <x-main.club-main :news="$clubMain"/>
     <x-extra.main-extra.short-news :shortNews="$news"/>
-    <x-main.famous-players/>
-    <x-extra.birthday/>
+    @foreach ($famous as $item)
+        <x-main.famous-players :famous="$item"/>
+    @endforeach
+    @if ($birthday)
+        <x-extra.birthday :birthday="$birthday"/>
+    @endif
     <x-extra.partner/>
 </x-main.main>

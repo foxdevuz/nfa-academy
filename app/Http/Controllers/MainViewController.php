@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Famous;
 use App\Models\MainPageNews;
 use App\Models\News;
-use Illuminate\Http\Request;
 
 class MainViewController extends Controller
 {
@@ -12,6 +12,8 @@ class MainViewController extends Controller
         return view('welcome', [
             'clubMain' => MainPageNews::latest()->get(),
             'news'=>News::inRandomOrder()->get(),
+            'famous'=>Famous::all(),
+            'birthday'=>BirthdayController::birthday()
         ]);
     }
 }
