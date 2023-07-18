@@ -10,8 +10,8 @@ class MainViewController extends Controller
 {
     public function index() {
         return view('welcome', [
-            'clubMain' => MainPageNews::latest(),
-            'news'=>News::all(),
+            'clubMain' => MainPageNews::latest()->get(),
+            'news'=>News::inRandomOrder()->get(),
         ]);
     }
 }

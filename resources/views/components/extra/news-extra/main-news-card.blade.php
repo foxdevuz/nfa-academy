@@ -1,14 +1,14 @@
-<a class="col-lg-6" href="./songiyangliklar.html">
+@props(['news'])
+<a class="col-lg-6" href="/news/{{ $news->id }}">
     <div class="col-lg-10">
         <div class="d-flex h-100">
             <div class="flex-shrink-0 box">
-                <img class="img-fluid" src="./img/cake-1.jpg" alt="" style="width: 150px; height: 85px; object-fit: cover" />
+                <img class="img-fluid" src="/storage/images/{{ $news->file }}" alt="" style="width: 150px; height: 85px; object-fit: cover" />
             </div>
             <div class="d-flex flex-column justify-content-center text-start bg-secondary px-4">
-                <h5 class="text-uppercase">Birthday Cake</h5>
+                <h5 class="text-uppercase">{{ Str::limit($news->name, 35, '...') }}</h5>
                 <span>
-                    Ipsum ipsum clita erat amet dolor sit justo sea eirmod
-                    diam stet sit justo
+                    {{ Str::limit($news->desc, 20, '...') }}
                 </span>
             </div>
         </div>

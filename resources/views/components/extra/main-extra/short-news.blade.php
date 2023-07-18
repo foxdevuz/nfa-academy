@@ -1,3 +1,4 @@
+@props(['shortNews'])
 <div class="container-fluid about py-5">
     <div class="container">
     <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px">
@@ -16,22 +17,24 @@
         <div class="tab-content">
         <div id="tab-1" class="tab-pane fade show p-0 active">
             <div class="row g-3">
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
+                @foreach ($shortNews as $news)
+                    @if ($loop->iteration <= 6)
+                        <x-extra.news-extra.main-news-card :news="$news"/>
+                    @else
+                        @break
+                    @endif
+                @endforeach
             </div>
         </div>
         <div id="tab-2" class="tab-pane fade show p-0">
             <div class="row g-3">
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
-                <x-extra.news-extra.main-news-card/>
+                @foreach ($shortNews->skip(6) as $news)
+                    @if ($loop->iteration <= 6)
+                        <x-extra.news-extra.main-news-card :news="$news"/>
+                    @else
+                        @break
+                    @endif
+                @endforeach
             </div>
         </div>
         </div>

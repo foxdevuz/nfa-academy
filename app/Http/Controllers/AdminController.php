@@ -38,6 +38,7 @@ class AdminController extends Controller
             'title'=>['required'],
             'file'=>['required', 'file']
         ]);
+        // dd($req->all());
 
         if($validator->fails()){
             return redirect()->back()->with('error', 'Missing required felid');
