@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\DirectionController;
 use App\Http\Controllers\MainViewController;
+use App\Http\Controllers\TelegramBotController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainViewController::class, 'index']);
@@ -95,3 +96,4 @@ Route::post('/login', [AdminLoginController::class, 'loginSession']);
 Route::get('/login', [AdminLoginController::class, 'login']);
 Route::get('/breaking-news', [DirectionController::class, 'breakingNews']);
 Route::get('/news', [DirectionController::class, 'showNews']);
+Route::post('/sendMessage', [TelegramBotController::class, 'sendMessage']);
