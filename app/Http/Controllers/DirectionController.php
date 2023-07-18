@@ -20,7 +20,10 @@ class DirectionController extends Controller
         return view('extra.clubNews');
     }
     public function u11(Request $request) {
-        return view('club.u-club');
+        return view('club.u-club', [
+            'club'=>MainViewController::showClub($request->input('id')),
+            'coach'=>MainViewController::showClubCoach($request->input('id')),
+        ]);
     }
     public function clubHistory() {
         return view('club.history');
@@ -29,13 +32,19 @@ class DirectionController extends Controller
         return view('extra.contact');
     }
     public function lider() {
-        return view('extra.liders');
+        return view('extra.liders', [
+            'liders'=>MainViewController::showLider()
+        ]);
     }
     public function doctors() {
-        return view('extra.doctors');
+        return view('extra.doctors', [
+            'doctors'=>MainViewController::showDoctor()
+        ]);
     }
     public function coach(){
-        return view('extra.coach');
+        return view('extra.coach', [
+            'coaches'=>MainViewController::showCoach()
+        ]);
     }
     public function addLiders() {
         return view('admin.liders');

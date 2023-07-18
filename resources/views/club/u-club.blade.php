@@ -8,8 +8,9 @@
                 <div class="container-fluid py-5">
                     <div class="container">
                         <div class="row g-5" style="justify-content: space-around ;">
-                            <x-extra.club-extra.coach/>
-                            <x-extra.club-extra.coach/>
+                            @foreach ($coach as $item)
+                                <x-extra.club-extra.coach :coach="$item"/>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -25,26 +26,9 @@
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-3">
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
-                                <x-extra.club-extra.pupils/>
+                                @foreach ($club as $item)
+                                    <x-extra.club-extra.pupils :student="$item"/>
+                                @endforeach
                             </div>
                         </div>
                     </div>

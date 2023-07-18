@@ -6,17 +6,9 @@
                 <h1 class="display-4 text-uppercase">Murabbiylar</h1>
             </div>
             <div class="row g-5">
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
-               <x-extra.club-extra.coach-card/>
+                @foreach ($coaches as $coach)
+                    <x-extra.club-extra.coach-card :coach="$coach"/>
+                @endforeach
             </div>
         </div>
     </div>

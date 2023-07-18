@@ -6,7 +6,9 @@
                 <h1 class="display-4 text-uppercase">Virachlar</h1>
             </div>
             <div class="row g-5">
-                <x-extra.club-extra.doctor-card/>
+                @foreach ($doctors as $doctor)
+                    <x-extra.club-extra.doctor-card :doc="$doctor"/>
+                @endforeach
             </div>
         </div>
     </div>

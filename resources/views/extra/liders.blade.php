@@ -18,11 +18,9 @@
                 <h1 class="display-4 text-uppercase">Rahbariyat azolari</h1>
             </div>
             <div class="row g-5">
-               <x-extra.club-extra.liders/>
-               <x-extra.club-extra.liders/>
-               <x-extra.club-extra.liders/>
-               <x-extra.club-extra.liders/>
-               <x-extra.club-extra.liders/>
+                @foreach ($liders as $lider)
+                    <x-extra.club-extra.liders :lider="$lider"/>
+                @endforeach
             </div>
         </div>
     </div>
