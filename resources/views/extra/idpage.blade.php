@@ -5,7 +5,7 @@
                 <div class="col-lg-4 col-md-4" style="width: 80%; height: 10%; margin: auto;">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="w-100" style="height: 700px; filter: blur(0);" src="/storage/images/{{ $news->file }}" alt="">
+                            <img class="w-100" style="height: 700px; filter: blur(0);" src="/public/storage/images/{{ $news->file }}" alt="">
                         </div>
                         <div class="bg-dark text-center p-4">
                             <h4 class="text-uppercase text-primary">{{ $news->name }}</h4>

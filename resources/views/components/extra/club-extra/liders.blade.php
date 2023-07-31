@@ -3,7 +3,7 @@
     <div class="team-item">
         <div class="position-relative overflow-hidden">
             <img class="img-fluid w-100" style="height: 425px; object-fit: cover; filter: blur(0);"
-                src="/storage/images/{{ $lider->image }}" alt="">
+                src="/public/storage/images/{{ $lider->image }}" alt="">
             <div
                 class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
             </div>

@@ -6,7 +6,7 @@
                 <h5 class="card-title">{{ $item->name }}</h5>
                 <h6 class="card-body">Tug'ilgan kuni: {{ $item->birthday }}</h6>
                 <h6 class="card-body">Lavozimi: {{ $item->rank }}</h6>
-                <a href="/coach/delete?id={{ $item->id }}" class="btn btn-danger rounded">O'chirib tashlash</a>
+                <a href="/coach-all/delete?id={{ $item->id }}" class="btn btn-danger rounded">O'chirib tashlash</a>
             </div>
         </div>
     @endforeach

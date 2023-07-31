@@ -4,7 +4,7 @@
         <div class="position-relative overflow-hidden">
             <a href="/news?id={{ $news->id }}">
                 <img class="img-fluid w-100" style="filter: blur(0);"
-                    src="/storage/images/{{ $news->file }}"
+                    src="/public/storage/images/{{ $news->file }}"
                     alt="">
             </a>
         </div>

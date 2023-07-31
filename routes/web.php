@@ -50,7 +50,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/coach/delete', [ClubController::class, 'deleteCoach']);
     Route::get('/lider/delete', [AdminController::class, 'deleteLider']);
     Route::get('/doctors/delete', [AdminController::class, 'delDocBackend']);
-    Route::get('/coach/delete', [AdminController::class, 'delCoachBackend']);
+    Route::get('/coach-all/delete', [AdminController::class, 'delCoachBackend']);
     Route::get('/famous/delete', [AdminController::class, 'delFamousBackend']);
     Route::get('/event/delete', [AdminController::class, 'delEventBg']);
 });

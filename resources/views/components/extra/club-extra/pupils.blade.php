@@ -3,7 +3,7 @@
     <div class="d-flex h-100">
         <div class="flex-shrink-0 box">
             <img
-                class="img-fluid" src="/storage/images/{{ $student->image }}"
+                class="img-fluid" src="/public/storage/images/{{ $student->image }}"
                 alt=""
                 style="width: 150px; height: 160px; object-fit: cover;"
             />

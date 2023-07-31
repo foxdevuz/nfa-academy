@@ -39,8 +39,8 @@
         <a href="/contact" class="nav-item nav-link">Aloqa</a>
 
         <a target="_blank" href="https://t.me/NFAFutbolakademiya"><i class="ufaImagey fa-brands fa-telegram"></i></a>
-        <a target="_blank" href="https://www.instagram.com/futbol.akedemiya.namangan/"><i class="ufaImagey fa-brands fa-youtube"></i></a>
-        <a target="_blank" href="https://www.youtube.com/@namanganfootballacademyfoo9808"><i class="ufaImagey fa-brands fa-instagram"></i></a>
+        <a target="_blank" href="https://www.youtube.com/@namanganfootballacademyfoo9808"><i class="ufaImagey fa-brands fa-youtube"></i></a>
+        <a target="_blank" href="https://www.instagram.com/futbol.akedemiya.namangan/"><i class="ufaImagey fa-brands fa-instagram"></i></a>
         <a target="_blank" href="https://www.youtube.com/@namanganfootballacademyfoo9808"><i class="ufaImagey fa-brands fa-facebook"></i></a>
     </div>
     </div>
