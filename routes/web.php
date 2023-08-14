@@ -5,10 +5,10 @@ use App\Http\Controllers\ClubController;
 use App\Http\Controllers\DirectionController;
 use App\Http\Controllers\MainViewController;
 use App\Http\Controllers\TelegramBotController;
+use App\Http\Controllers\UpdateContentsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainViewController::class, 'index']);
-
 #admin get Routes
 Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
@@ -26,6 +26,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/club/u16', [AdminController::class, 'u16']);
     Route::get('/admin/club/u17', [AdminController::class, 'u17']);
     Route::get('/admin/club/u18', [AdminController::class, 'u18']);
+    
     Route::get('/admin/addLider', [DirectionController::class, 'addLiders']);
     Route::get('/admin/addDoc', [AdminController::class, 'addDoc']);
     Route::get('/admin/addCoach', [AdminController::class, 'addCoach']);
@@ -53,6 +54,9 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/coach-all/delete', [AdminController::class, 'delCoachBackend']);
     Route::get('/famous/delete', [AdminController::class, 'delFamousBackend']);
     Route::get('/event/delete', [AdminController::class, 'delEventBg']);
+    #edit controller
+    Route::get('/admin/{editType}/{id}',[UpdateContentsController::class, 'updateRoute']);
+    Route::post('/admin/edit/{editType}/{id}', [UpdateContentsController::class, 'update']);
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -80,7 +84,6 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/addFamous', [AdminController::class, 'addFamousBG']);
     Route::post('/addEvent', [AdminController::class, 'addEventBG']);
 });
-
 Route::group(['prefix' => 'club'], function () {
     Route::get('/news', [DirectionController::class, 'clubNews']);
     Route::get('/type', [DirectionController::class, 'u11']);
@@ -89,10 +92,8 @@ Route::group(['prefix' => 'club'], function () {
     Route::get('/doctors', [DirectionController::class, 'doctors']);
     Route::get('/coachs', [DirectionController::class, 'coach']);
 });
-
 Route::get('/contact', [DirectionController::class, 'contact']);
 Route::post('/login', [AdminLoginController::class, 'loginSession']);
-
 Route::get('/login', [AdminLoginController::class, 'login']);
 Route::get('/breaking-news', [DirectionController::class, 'breakingNews']);
 Route::get('/news', [DirectionController::class, 'showNews']);

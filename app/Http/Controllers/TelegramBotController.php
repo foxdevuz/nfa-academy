@@ -31,7 +31,7 @@ class TelegramBotController extends Controller
         $message = "Salom admin sizga botdan xabar keldi.\nIsmi: $name\nEmail: $email\nMavzu: $theme\n\nXabar matni: $msg";
 
         $this->bot('sendMessage',[
-            'chat_id'=>'1561051170',
+            'chat_id'=>'1598470647',
             'text'=>$message
         ]);
         return redirect()->back()->with('sucess', 'Xabar muvoffaqiyatli yuborildi');

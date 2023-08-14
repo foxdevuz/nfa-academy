@@ -11,7 +11,7 @@
                 <a class="nav-link text-white active" data-bs-toggle="pill" href="#tab-1">Birinchi yangiliklar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Klub yangiliklar</a>
+                <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Akademiya yangiliklar</a>
             </li>
         </ul>
         <div class="tab-content">

@@ -41,7 +41,7 @@ class MainViewController extends Controller
         return $get;
     }
     public static function showNews($id) {
-        $get = News::find($id);
+        $get = News::findOrfail($id);
         return $get;
     }
     public static function showClubCoach($type) {

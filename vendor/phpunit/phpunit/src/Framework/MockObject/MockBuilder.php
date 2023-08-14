@@ -10,6 +10,17 @@
 namespace PHPUnit\Framework\MockObject;
 
 use function array_merge;
+use PHPUnit\Framework\MockObject\Generator\ClassAlreadyExistsException;
+use PHPUnit\Framework\MockObject\Generator\ClassIsEnumerationException;
+use PHPUnit\Framework\MockObject\Generator\ClassIsFinalException;
+use PHPUnit\Framework\MockObject\Generator\ClassIsReadonlyException;
+use PHPUnit\Framework\MockObject\Generator\DuplicateMethodException;
+use PHPUnit\Framework\MockObject\Generator\Generator;
+use PHPUnit\Framework\MockObject\Generator\InvalidMethodNameException;
+use PHPUnit\Framework\MockObject\Generator\OriginalConstructorInvocationRequiredException;
+use PHPUnit\Framework\MockObject\Generator\ReflectionException;
+use PHPUnit\Framework\MockObject\Generator\RuntimeException;
+use PHPUnit\Framework\MockObject\Generator\UnknownTypeException;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
@@ -242,6 +253,8 @@ final class MockBuilder
      * Specifies the name for the mock class.
      *
      * @return $this
+     *
+     * @deprecated https://github.com/sebastianbergmann/phpunit/issues/5444
      */
     public function setMockClassName(string $name): self
     {
@@ -423,6 +436,8 @@ final class MockBuilder
 
     /**
      * @return $this
+     *
+     * @deprecated https://github.com/sebastianbergmann/phpunit/issues/5421
      */
     public function enableAutoReturnValueGeneration(): self
     {
@@ -433,6 +448,8 @@ final class MockBuilder
 
     /**
      * @return $this
+     *
+     * @deprecated https://github.com/sebastianbergmann/phpunit/issues/5421
      */
     public function disableAutoReturnValueGeneration(): self
     {

@@ -29,28 +29,26 @@
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
                         <h4 class="text-primary text-uppercase mb-4">Sayt xaritasi</h4>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="./index.html">
+                            <a class="text-secondary mb-2" href="/">
                                 <i class="bi bi-arrow-right text-primary me-2"></i>
                                 Asosiy
                             </a>
-                            <a class="text-secondary mb-2" href="./songiyangliklar.html">
+                            <a class="text-secondary mb-2" href="/breaking-news">
                                 <i class="bi bi-arrow-right text-primary me-2"></i>Yangliklar
                             </a>
-                            <a class="text-secondary mb-2" href="./about.html">
-                                <i class="bi bi-arrow-right text-primary me-2"></i>Klub yangiliklari
-                            </a>
-                            <a class="text-secondary mb-2" href="./menu.html">
+                            <a class="text-secondary mb-2" href="/club/type?id=u11">
                                 <i class="bi bi-arrow-right text-primary me-2"></i>
                                 Jamoalar
                             </a>
-                            <a class="text-secondary mb-2" href="./klubtarixi.html"><i class="bi bi-arrow-right text-primary me-2"></i>
-                                    Akdemiya tarixi
-                                </a>
-                            <a class="text-secondary mb-2" href="./service.html">
+                            <a class="text-secondary mb-2" href="/club/history"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>
+                                Akdemiya tarixi
+                            </a>
+                            <a class="text-secondary mb-2" href="/club/liders">
                                 <i class="bi bi-arrow-right text-primary me-2"></i>
                                 Rahbariyat
                             </a>
-                            <a class="text-secondary mb-2" href="#">
+                            <a class="text-secondary mb-2" href="/contact">
                                 <i class="bi bi-arrow-right text-primary me-2"></i>Aloqa
                             </a>
                         </div>

@@ -1,13 +1,13 @@
 @props(['doc'])
 <div class="col-lg-4 col-md-6">
-    <div class="team-item">
-        <div class="position-relative overflow-hidden">
-            <img class="img-fluid w-100" style="height: 344px;filter: blur(0);" src="/public/storage/images/{{ $doc->image }}" alt="" />
-            <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+     <div class="position-relative" style="cursor: pointer;">
+            <img  style="height: 150px; width: 150px; filter: blur(0); border-radius:50%; margin-left:6pc"
+                src="/public/storage/images/{{ $doc->image }}" alt="">
+            <div
+                class="team-overlay position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
             </div>
         </div>
-        <div class="bg-dark border-inner text-center p-4">
-            <h4 class="text-uppercase text-primary">{{ $doc->name }}</h4>
+        <div class="border-inner text-center p-4 " style="text-align:center">
+            <h4 class="text-uppercase" style="color: blue;">{{ $doc->name }}</h4>
         </div>
-    </div>
 </div>

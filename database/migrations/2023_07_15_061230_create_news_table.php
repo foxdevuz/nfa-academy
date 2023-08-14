@@ -15,7 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('desc');
-            $table->text('file');
+            $table->text('file_1')->nullable();
+            $table->text('file_2')->nullable();
+            $table->text('file_3')->nullable();
+            $table->text('file_4')->nullable();
+            $table->text('file_5')->nullable();
+            $table->text('file_6')->nullable();
+            $table->text('file_7')->nullable();
+            $table->text('file_8')->nullable();
+            $table->text('file_9')->nullable();
+            $table->text('file_10')->nullable();
             $table->timestamps();
         });
     }

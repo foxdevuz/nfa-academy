@@ -43,7 +43,7 @@
         "sebastian/diff": "^5.0",
         "sebastian/environment": "^6.0",
         "sebastian/exporter": "^5.0",
-        "sebastian/global-state": "^6.0",
+        "sebastian/global-state": "^6.0.1",
         "sebastian/object-enumerator": "^5.0",
         "sebastian/recursion-context": "^5.0",
         "sebastian/type": "^4.0",
@@ -77,13 +77,14 @@
         "files": [
             "tests/_files/CoverageNamespacedFunctionTest.php",
             "tests/_files/CoveredFunction.php",
+            "tests/_files/Generator.php",
             "tests/_files/NamespaceCoveredFunction.php",
             "tests/end-to-end/code-coverage/ignore-function-using-attribute/src/CoveredFunction.php"
         ]
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "10.2-dev"
+            "dev-main": "10.3-dev"
         }
     }
 }
