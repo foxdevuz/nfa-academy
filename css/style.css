@@ -5,19 +5,21 @@
   --light: #ffffff;
   --dark: #2b2825;
 }
+
 .event-btn {
-    position: absolute;
-    left: 75%;
-    top: 91%;
-    padding: 15px 10px;
-    border-radius: 8px;
-    background: #e37b07;
-    border: none;
-    color: #fff;
-    font-style: bold;
-    font-size: 1.5rem;
-    width: max-content;
+  position: absolute;
+  left: 75%;
+  top: 91%;
+  padding: 15px 10px;
+  border-radius: 8px;
+  background: #e37b07;
+  border: none;
+  color: #fff;
+  font-style: bold;
+  font-size: 1.5rem;
+  width: max-content;
 }
+
 .font-secondary {
   font-family: "Pacifico", cursive;
 }
@@ -250,6 +252,7 @@ h6,
   margin-left: -90px;
   background: var(--primary);
 }
+
 .service::after,
 .contact::after {
   position: absolute;
@@ -434,14 +437,15 @@ img {
   width: 50%;
   margin-left: 2.5pc;
 }
-.brat{
-    border-radius: 16px;
+
+.brat {
+  border-radius: 16px;
 }
 
-@media only screen 
-    and (width: 390px) {
-.ufaImage{
-display:none;}
+@media only screen and (width: 390px) {
+  .ufaImage {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 414px) {
@@ -449,6 +453,7 @@ display:none;}
     border: 1px solid red;
     display: none;
   }
+
   .event-btn {
     position: absolute;
     left: 45%;
@@ -461,9 +466,12 @@ display:none;}
     font-style: bold;
     font-size: 1.5rem;
     width: max-content;
-}
+  }
 }
 
 #map {
-  width: 100%; height: 100%; padding: 0; margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
