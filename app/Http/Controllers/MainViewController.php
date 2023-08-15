@@ -41,7 +41,14 @@ class MainViewController extends Controller
         return $get;
     }
     public static function showNews($id) {
-        $get = News::findOrfail($id);
+        $get = News::where('id', $id)
+                    ->where(function ($query) {
+                        for ($i = 1; $i <= 10; $i++) {
+                            $fileColumn = 'file_' . $i;
+                            $query->orWhereNotNull($fileColumn);
+                        }
+                    })
+                    ->get();
         return $get;
     }
     public static function showClubCoach($type) {

@@ -96,49 +96,37 @@ class AdminController extends Controller
             'title' => ['required'],
             'text' => ['required'],
             'file_1' => ['required', 'file'],
-            'file_2' => ['required', 'file'],
-            'file_3' => ['required', 'file'],
-            'file_4' => ['required', 'file'],
-            'file_5' => ['required', 'file'],
-            'file_6' => ['required', 'file'],
-            'file_7' => ['required', 'file'],
-            'file_8' => ['required', 'file'],
-            'file_9' => ['required', 'file'],
-            'file_10' => ['required', 'file'],
         ]);
+
         if ($validation->fails()) {
             return redirect('/admin/mainPageNew')->with('error', 'Missing required field(s)');
         }
-        #get currect time
-        $time = Carbon::now();
-        #save image
-        $req->file('file_1')->storeAs('public/images', $time . $req->file('file_1')->getClientOriginalName());
-        $req->file('file_2')->storeAs('public/images', $time . $req->file('file_2')->getClientOriginalName());
-        $req->file('file_3')->storeAs('public/images', $time . $req->file('file_3')->getClientOriginalName());
-        $req->file('file_4')->storeAs('public/images', $time . $req->file('file_4')->getClientOriginalName());
-        $req->file('file_5')->storeAs('public/images', $time . $req->file('file_5')->getClientOriginalName());
-        $req->file('file_6')->storeAs('public/images', $time . $req->file('file_6')->getClientOriginalName());
-        $req->file('file_7')->storeAs('public/images', $time . $req->file('file_7')->getClientOriginalName());
-        $req->file('file_8')->storeAs('public/images', $time . $req->file('file_8')->getClientOriginalName());
-        $req->file('file_9')->storeAs('public/images', $time . $req->file('file_9')->getClientOriginalName());
-        $req->file('file_10')->storeAs('public/images', $time . $req->file('file_10')->getClientOriginalName());
 
-        News::create([
+        $time = Carbon::now();
+
+        $filesToProcess = [];
+        for ($i = 1; $i <= 10; $i++) {
+            $fileKey = 'file_' . $i;
+            if ($req->hasFile($fileKey)) {
+                $fileName = $time . $req->file($fileKey)->getClientOriginalName();
+                $req->file($fileKey)->storeAs('public/images', $fileName);
+                $filesToProcess[$fileKey] = $fileName;
+            }
+        }
+
+        $data = [
             'name' => $req->input('title'),
             'desc' => $req->input('text'),
-            'file_1' => $time . $req->file('file_1')->getClientOriginalName(),
-            'file_2' => $time . $req->file('file_2')->getClientOriginalName(),
-            'file_3' => $time . $req->file('file_3')->getClientOriginalName(),
-            'file_4' => $time . $req->file('file_4')->getClientOriginalName(),
-            'file_5' => $time . $req->file('file_5')->getClientOriginalName(),
-            'file_6' => $time . $req->file('file_6')->getClientOriginalName(),
-            'file_7' => $time . $req->file('file_7')->getClientOriginalName(),
-            'file_8' => $time . $req->file('file_8')->getClientOriginalName(),
-            'file_9' => $time . $req->file('file_9')->getClientOriginalName(),
-            'file_10' => $time . $req->file('file_10')->getClientOriginalName(),
-        ]);
-        return redirect()->back()->with('success', 'Yangilik muvoffaqiyatli qo\'shildi');
+        ];
+        foreach ($filesToProcess as $key => $fileName) {
+            $data[$key] = $fileName;
+        }
+
+        News::create($data);
+
+        return redirect()->back()->with('success', 'Yangilik muvaffaqiyatli qo\'shildi');
     }
+
     public function showNews()
     {
         $get = News::all();
