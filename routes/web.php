@@ -3,6 +3,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\DirectionController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\MainViewController;
 use App\Http\Controllers\TelegramBotController;
 use App\Http\Controllers\UpdateContentsController;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainViewController::class, 'index']);
 #admin get Routes
 Route::middleware(['sessionadmin'])->group(function () {
+    Route::get('/admin/history', [DirectionController::class, 'history']);
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/admin/mainPageNew', [AdminController::class, 'ap_showAll']);
     Route::get('/mainpagenews/delete', [AdminController::class, 'mainpagenews_destroy']);
@@ -26,7 +28,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/club/u16', [AdminController::class, 'u16']);
     Route::get('/admin/club/u17', [AdminController::class, 'u17']);
     Route::get('/admin/club/u18', [AdminController::class, 'u18']);
-    
+
     Route::get('/admin/addLider', [DirectionController::class, 'addLiders']);
     Route::get('/admin/addDoc', [AdminController::class, 'addDoc']);
     Route::get('/admin/addCoach', [AdminController::class, 'addCoach']);
@@ -56,7 +58,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/event/delete', [AdminController::class, 'delEventBg']);
     #edit controller
     Route::get('/admin/{editType}/{id}',[UpdateContentsController::class, 'updateRoute']);
-    Route::post('/admin/edit/{editType}/{id}', [UpdateContentsController::class, 'update']);
+    #history
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -83,6 +85,8 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/addCoach', [AdminController::class, 'addCoachBackend']);
     Route::post('/addFamous', [AdminController::class, 'addFamousBG']);
     Route::post('/addEvent', [AdminController::class, 'addEventBG']);
+    Route::post('/admin/edit/{editType}/{id}', [UpdateContentsController::class, 'update']);
+    Route::post('/addHistory', [HistoryController::class, 'storeHistory']);
 });
 Route::group(['prefix' => 'club'], function () {
     Route::get('/news', [DirectionController::class, 'clubNews']);
