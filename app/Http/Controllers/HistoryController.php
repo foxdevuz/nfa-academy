@@ -18,7 +18,7 @@ class HistoryController extends Controller
             ]);
             return redirect()->back()->with('success', 'Tarix qo\'shildi');
         }catch(Exception $e){
-            return redirect()->back()->with('error', 'Nimadir xato ketdi,  qaytadn urunib ko\'ring. Error message'. $e->getMessage());
+            return redirect()->back()->with('error', 'Nimadir xato ketdi,  qaytadan urunib ko\'ring. Error message'. $e->getMessage());
         }
     }
 }
