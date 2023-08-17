@@ -11,7 +11,7 @@
                                         <div class="carousel-item{{ $i === 1 ? ' active' : '' }}">
                                             <div class="position-relative overflow-hidden">
                                                 <img class="w-100" style="filter: blur(0);"
-                                                    src="/storage/images/{{ $news[0]->{"file_$i"} }}" alt="">
+                                                    src="/public/storage/images/{{ $news[0]->{"file_$i"} }}" alt="">
                                             </div>
                                         </div>
                                     @endif
