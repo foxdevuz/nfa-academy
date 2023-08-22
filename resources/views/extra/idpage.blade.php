@@ -7,51 +7,51 @@
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                               <div class="carousel-item active">
-                                <img src="/public/storage/images/{{ $news[0]->file_1 }}" class="d-block w-100" alt="News image">
+                                <img src="/storage/images/{{ $news[0]->file_1 }}" class="d-block w-100" alt="News image">
                               </div>
                               @if ($news[0]->file_2 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_2 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_2 }}" class="d-block w-100" alt="News image">
                                 </div>
                               @endif
                               @if ($news[0]->file_3 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_3 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_3 }}" class="d-block w-100" alt="News image">
                                 </div>                             
                               @endif
                               @if ($news[0]->file_4 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_4 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_4 }}" class="d-block w-100" alt="News image">
                                 </div>                             
                               @endif
                               @if ($news[0]->file_5 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_5 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_5 }}" class="d-block w-100" alt="News image">
                                 </div>                             
                               @endif
                               @if ($news[0]->file_6 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_6 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_6 }}" class="d-block w-100" alt="News image">
                                 </div>                             
                               @endif
                               @if ($news[0]->file_7 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_7 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_7 }}" class="d-block w-100" alt="News image">
                                 </div>                             
                               @endif
                               @if ($news[0]->file_8 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_8 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_8 }}" class="d-block w-100" alt="News image">
                                 </div>                             
                               @endif
                               @if ($news[0]->file_9 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_9 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_9 }}" class="d-block w-100" alt="News image">
                                 </div>                             
                               @endif
                               @if ($news[0]->file_10 !== null)
                                 <div class="carousel-item">
-                                    <img src="/public/storage/images/{{ $news[0]->file_10 }}" class="d-block w-100" alt="News image">
+                                    <img src="/storage/images/{{ $news[0]->file_10 }}" class="d-block w-100" alt="News image">
                                 </div>                             
                               @endif
                             </div>

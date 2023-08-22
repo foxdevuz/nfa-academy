@@ -1,7 +1,7 @@
 <x-admin.index-layout>
     @foreach ($coach as $item)
         <div class="card" style="width: 19rem; display:inline-block; margin: 0 1.2rem 1rem 1.2rem;">
-            <img class="card-img-top" src="/public/storage/images/{{ $item->image }}" alt="Card image cap">
+            <img class="card-img-top" src="/storage/images/{{ $item->image }}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ $item->name }}</h5>
                 <h5 class="card-body">{{ $item->birthday }}</h5>
@@ -11,7 +11,7 @@
     @endforeach
     @foreach ($all as $item)
         <div class="card" style="width: 19rem; display:inline-block; margin: 0 1.2rem 1rem 1.2rem;">
-            <img class="card-img-top" src="/public/storage/images/{{ $item->image }}" alt="Card image cap">
+            <img class="card-img-top" src="/storage/images/{{ $item->image }}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ $item->name }}</h5>
                 <h5 class="card-body">{{ $item->birthday }}</h5>
