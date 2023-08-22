@@ -30,14 +30,14 @@ class MainViewController extends Controller
     public function index() {
         return view('welcome', [
             'clubMain' => MainPageNews::latest()->get(),
-            'news'=>News::inRandomOrder()->get(),
+            'news'=>News::orderByDesc('id')->get(),
             'famous'=>Famous::all(),
             'birthday'=>BirthdayController::birthday(),
             'event'=>EventController::event()
         ]);
     }
     public static function breakingNews(){
-        $get = News::inRandomOrder()->paginate(10);
+        $get = News::orderByDesc('id')->paginate(10);
         return $get;
     }
     public static function showNews($id) {

@@ -358,6 +358,7 @@ h6,
 }
 
 .ufaImage {
+    width: 120px;
     height: 100px;
     border-radius: 16px;
     object-fit: cover;
@@ -417,6 +418,12 @@ img {
     margin: auto 0;
 }
 
+@media screen and (max-width: 480px) {
+    .Happyu_brithday_image {
+        width: 200px;
+    }
+}
+
 .ufaImagep {
     width: 200px;
 }
@@ -439,14 +446,9 @@ img {
     border-radius: 16px;
 }
 
-@media only screen and (max-width: 290px) {
-    .ufaImage {
-        display: none;
-    }
-}
-
 @media only screen and (max-width: 414px) {
     .ufaImage {
+        border: 1px solid red;
         display: none;
     }
     .event-btn {

@@ -20,7 +20,7 @@ class BirthdayController extends Controller
     {
         $today = Carbon::today();
         $monthDay = $today->format('m-d'); // Get current month and day in MM-DD format
-
+    
         $models = [
             Coach::class,
             Lider::class,
@@ -34,26 +34,31 @@ class BirthdayController extends Controller
             u17::class,
             u18::class,
         ];
-
+    
         $matchingBirthdays = [];
-
+    
         foreach ($models as $model) {
             $results = $model::all();
-
+    
             foreach ($results as $result) {
-                // Convert the birthday format to Y-m-d for Carbon parsing
-                $formattedBirthday = str_replace('.', '-', $result->birthday);
-                $birthday = Carbon::createFromFormat('Y-m-d', $formattedBirthday);
-                
-                $birthdayMonthDay = $birthday->format('m-d');
-
-                if ($birthdayMonthDay === $monthDay) {
+                $birthdayParts = explode('.', $result->birthday);
+    
+                if (count($birthdayParts) !== 3) {
+                    // Invalid birthday format, skip this record
+                    continue;
+                }
+    
+                $birthdayMonth = $birthdayParts[1];
+                $birthdayDay = $birthdayParts[2];
+    
+                if ($birthdayMonth . '-' . $birthdayDay === $monthDay) {
                     $matchingBirthdays[] = $result;
                 }
             }
         }
-
+    
         return $matchingBirthdays;
     }
+
 
 }
