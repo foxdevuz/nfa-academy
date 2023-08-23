@@ -2,8 +2,9 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\ClubsController;
+use App\Http\Controllers\CoachController;
 use App\Http\Controllers\DirectionController;
-use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\MainViewController;
 use App\Http\Controllers\TelegramBotController;
 use App\Http\Controllers\UpdateContentsController;
@@ -58,7 +59,6 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/event/delete', [AdminController::class, 'delEventBg']);
     #edit controller
     Route::get('/admin/{editType}/{id}',[UpdateContentsController::class, 'updateRoute']);
-    #history
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -70,6 +70,9 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/addFamous', [AdminController::class, 'addFamousBG']);
     Route::post('/addEvent', [AdminController::class, 'addEventBG']);
     Route::post('/admin/edit/{editType}/{id}', [UpdateContentsController::class, 'update']);
+    #add coach
+    Route::post('/admin/storeCoach/{club}', [CoachController::class, 'store']);
+    Route::post('/admin/storeStudents/{club}', [ClubsController::class, 'store']);
 });
 Route::group(['prefix' => 'club'], function () {
     Route::get('/news', [DirectionController::class, 'clubNews']);

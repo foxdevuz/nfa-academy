@@ -1,5 +1,5 @@
 <x-admin.index-layout>
-    <form action="/u17Coach" method="post" enctype="multipart/form-data">
+    <form action="/admin/storeCoach/u-17" method="post" enctype="multipart/form-data">
         @csrf
         <p class="text-center">U17 klubi uchun boshqaruv | Murabbiy qo'shish</p>
         <label for="coach" class="form-label">Murabbiy</label>

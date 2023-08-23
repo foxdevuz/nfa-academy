@@ -1,5 +1,5 @@
 <x-admin.index-layout>
-    <form action="/u11Coach" method="post" enctype="multipart/form-data">
+    <form action="/admin/storeCoach/u-11" method="post" enctype="multipart/form-data">
         @csrf
         <p class="text-center">U11 klubi uchun boshqaruv | Murabbiy qo'shish</p>
         <label for="coach" class="form-label">Murabbiy</label>
@@ -14,7 +14,7 @@
     </form>
 
     {{-- adding club members --}}
-    <form action="/u11Members" method="post" enctype="multipart/form-data" class="mt-5">
+    <form action="/admin/storeStudents/u-11" method="post" enctype="multipart/form-data" class="mt-5">
         @csrf
         <p class="text-center mt-5">U11 klubi uchun boshqaruv | O'quvchi qo'shish</p>
         <label for="student" class="form-label">O'quvchi</label>
