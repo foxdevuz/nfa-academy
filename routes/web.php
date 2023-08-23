@@ -45,6 +45,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     #delete data
     Route::get('/club/delete', [ClubController::class, 'deleteClubMember']);
     Route::get('/coach/delete', [ClubController::class, 'deleteCoach']);
+    
     Route::get('/lider/delete', [AdminController::class, 'deleteLider']);
     Route::get('/doctors/delete', [AdminController::class, 'delDocBackend']);
     Route::get('/coach-all/delete', [AdminController::class, 'delCoachBackend']);

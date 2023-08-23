@@ -36,6 +36,6 @@ class ClubsController extends Controller
     public function showTeam($team){
        $students = User::where('club', $team)->get();
        $coach = Coach::where('club', $team)->get();
-       return view('admin.databaseClub.showu11', ['students' => $students, 'coach' => $coach]);
+       return view('admin.databaseClub.showu11', ['students' => $students, 'coach' => $coach, 'club'=>$team]);
     }
 }
