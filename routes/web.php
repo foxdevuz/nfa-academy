@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainViewController::class, 'index']);
 #admin get Routes
 Route::middleware(['sessionadmin'])->group(function () {
-    Route::get('/admin/history', [DirectionController::class, 'history']);
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/admin/mainPageNew', [AdminController::class, 'ap_showAll']);
     Route::get('/mainpagenews/delete', [AdminController::class, 'mainpagenews_destroy']);
@@ -43,6 +42,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/showU16', [AdminController::class, 'showU16']);
     Route::get('/admin/showU17', [AdminController::class, 'showU17']);
     Route::get('/admin/showU18', [AdminController::class, 'showU18']);
+    
     Route::get('/admin/showLider', [AdminController::class, 'showLider']);
     Route::get('/admin/showDoctors', [AdminController::class, 'showDoctor']);
     Route::get('/admin/showCoach', [AdminController::class, 'showCoach']);
@@ -64,29 +64,12 @@ Route::middleware(['sessionadmin'])->group(function () {
 Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/mainPage', [AdminController::class, 'firstPageNews']);
     Route::post('/addNews', [AdminController::class, 'addNewsBackend']);
-    Route::post('/u11Coach', [AdminController::class, 'u11CoachBackend']);
-    Route::post('/u11Members', [AdminController::class, 'u11StudentBackend']);
-    Route::post('/u12Coach', [AdminController::class, 'u12CoachBackend']);
-    Route::post('/u12Members', [AdminController::class, 'u12StudentBackend']);
-    Route::post('/u13Coach', [AdminController::class, 'u13CoachBackend']);
-    Route::post('/u13Members', [AdminController::class, 'u13StudentBackend']);
-    Route::post('/u14Coach', [AdminController::class, 'u14CoachBackend']);
-    Route::post('/u14Members', [AdminController::class, 'u14StudentBackend']);
-    Route::post('/u15Coach', [AdminController::class, 'u15CoachBackend']);
-    Route::post('/u15Members', [AdminController::class, 'u15StudentBackend']);
-    Route::post('/u16Coach', [AdminController::class, 'u16CoachBackend']);
-    Route::post('/u16Members', [AdminController::class, 'u16StudentBackend']);
-    Route::post('/u17Coach', [AdminController::class, 'u17CoachBackend']);
-    Route::post('/u17Members', [AdminController::class, 'u17StudentBackend']);
-    Route::post('/u18Coach', [AdminController::class, 'u18CoachBackend']);
-    Route::post('/u18Members', [AdminController::class, 'u18StudentBackend']);
     Route::post('/addLider', [AdminController::class, 'liderAdd']);
     Route::post('/addDoc', [AdminController::class, 'addDocBackend']);
     Route::post('/addCoach', [AdminController::class, 'addCoachBackend']);
     Route::post('/addFamous', [AdminController::class, 'addFamousBG']);
     Route::post('/addEvent', [AdminController::class, 'addEventBG']);
     Route::post('/admin/edit/{editType}/{id}', [UpdateContentsController::class, 'update']);
-    Route::post('/addHistory', [HistoryController::class, 'storeHistory']);
 });
 Route::group(['prefix' => 'club'], function () {
     Route::get('/news', [DirectionController::class, 'clubNews']);

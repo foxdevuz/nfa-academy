@@ -49,7 +49,4 @@ class DirectionController extends Controller
     public function addLiders() {
         return view('admin.liders');
     }
-    public function history(){
-        return view('admin.history-store');
-    }
 }

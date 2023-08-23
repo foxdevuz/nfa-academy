@@ -25,14 +25,6 @@ class BirthdayController extends Controller
             Coach::class,
             Lider::class,
             Famous::class,
-            u11::class,
-            u12::class,
-            u13::class,
-            u14::class,
-            u15::class,
-            u16::class,
-            u17::class,
-            u18::class,
         ];
     
         $matchingBirthdays = [];
