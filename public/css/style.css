@@ -10,7 +10,7 @@
 .event-btn {
     position: absolute;
     left: 75%;
-    top: 91%;
+    top: 70%;
     padding: 15px 10px;
     border-radius: 8px;
     background: #e37b07;
@@ -19,6 +19,10 @@
     font-style: bold;
     font-size: 1.5rem;
     width: max-content;
+}
+
+.event-btn img {
+    width: 300px;
 }
 
 .font-secondary {
@@ -453,9 +457,9 @@ img {
     }
     .event-btn {
         position: absolute;
-        left: 45%;
-        top: 91%;
-        padding: 15px 10px;
+        left: 50%;
+        top: 80%;
+        padding: 10px 5px;
         border-radius: 8px;
         background: #e37b07;
         border: none;
@@ -463,6 +467,9 @@ img {
         font-style: bold;
         font-size: 1.5rem;
         width: max-content;
+    }
+    .event-btn img {
+        width: 150px;
     }
 }
 

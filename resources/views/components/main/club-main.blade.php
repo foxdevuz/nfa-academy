@@ -10,7 +10,7 @@
             </div>
         </div>
         @if ($event)
-            <button class="event-btn">{{ $event->event }} | {{ $event->time }}</button>
+            <button class="event-btn"><img src="/storage/images/{{ $event->event }}" alt="Event in NFA"></button>
         @endif
     </div>
 </div>

@@ -13,7 +13,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Str;
 class AdminController extends Controller
 {
     public function dashboard()
@@ -349,7 +349,7 @@ class AdminController extends Controller
     public function addEventBG(Request $req)
     {
         $validation = Validator::make($req->all(), [
-            'event' => ['required'],
+            'event' => ['required', 'file'],
             'time' => ['required'],
         ]);
 
@@ -359,14 +359,24 @@ class AdminController extends Controller
                 ->with('error', 'Missing required fields');
         }
 
-        Event::create([
-            'event' => $req->input('event'),
-            'time' => $req->input('time'),
-        ]);
-
-        return redirect()
-            ->back()
-            ->with('success', "Ma'lumot qo'shildi");
+        try{
+            $event = $req->file('event');
+            $time = $req->input('time');
+            $imageName = Str::random() . "." . $event->getClientOriginalExtension();
+            $event->storeAs('/public/images', $imageName);
+            Event::create([
+                'event' => $imageName,
+                'time' => $time,
+            ]);
+    
+            return redirect()
+                ->back()
+                ->with('success', "Ma'lumot qo'shildi"); 
+        }catch(Exception $e){
+            return redirect()
+                ->back()
+                ->with('error', $e->getMessage());    
+        }
     }
     #redirect for database
     public function showLider()
