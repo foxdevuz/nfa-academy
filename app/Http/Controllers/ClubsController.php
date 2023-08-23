@@ -39,4 +39,44 @@ class ClubsController extends Controller
         $coach = Coach::where('club', $team)->get();
         return view('admin.databaseClub.showu11', ['students' => $students, 'coach' => $coach, 'club' => $team]);
     }
+    public function clubUpdateOneLever($club){
+       switch($club){
+            case 'u-11':
+                $target = 'u-12';
+                break;
+            case 'u-12':
+                $target = 'u-13';
+                break;
+            case 'u-13':
+                $target = 'u-14';
+                break;
+            case 'u-14':
+                $target = 'u-15';
+                break;
+            case 'u-15':
+                $target = 'u-16';
+                break;
+            case 'u-16':
+                $target = 'u-17';
+                break;
+            case 'u-17':
+                $target = 'u-18';
+                break; 
+            case 'u-18':
+                $target = 'none';
+                break;  
+            default:
+                return redirect()->back()->with('error', "Club is unknown");
+                break;
+        }
+        $user = User::where("club", $club)->get();
+        if(!$user){
+            return redirect()->back()->with('error', "Team not found");
+        }
+        foreach($user as $key){
+            $key->club = $target;
+            $key->save();
+        }
+        return redirect()->back()->with('error', "Yangilangi");
+    }
 }

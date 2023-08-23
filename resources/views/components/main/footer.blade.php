@@ -4,8 +4,10 @@
             <div class="col-lg-4 col-md-6 mt-lg-n5">
                 <div
                     class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
-                    <div id="map"></div>
-                    <script src="//api-maps.yandex.ru/2.1/?lang=uz_UZ" type="text/javascript"></script>
+                    <div id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1127.1762175064925!2d71.58925281270938!3d41.0027005765373!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1692783878541!5m2!1sen!2s" width="300" height="400" style="border:0; margin:auto;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>                   
                 </div>
             </div>
             <div class="col-lg-8 col-md-6">

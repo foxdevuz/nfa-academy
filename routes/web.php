@@ -20,6 +20,15 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/allNews', [AdminController::class, 'showNews']);
     Route::get('/news/delete', [AdminController::class, 'destroyNews']);
 
+    Route::get('/admin/club/u11', [AdminController::class, 'u11']);
+    Route::get('/admin/club/u12', [AdminController::class, 'u12']);
+    Route::get('/admin/club/u13', [AdminController::class, 'u13']);
+    Route::get('/admin/club/u14', [AdminController::class, 'u14']);
+    Route::get('/admin/club/u15', [AdminController::class, 'u15']);
+    Route::get('/admin/club/u16', [AdminController::class, 'u16']);
+    Route::get('/admin/club/u17', [AdminController::class, 'u17']);
+    Route::get('/admin/club/u18', [AdminController::class, 'u18']);
+
     Route::get('/admin/addLider', [DirectionController::class, 'addLiders']);
     Route::get('/admin/addDoc', [AdminController::class, 'addDoc']);
     Route::get('/admin/addCoach', [AdminController::class, 'addCoach']);
@@ -43,9 +52,11 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/famous/delete', [AdminController::class, 'delFamousBackend']);
     Route::get('/event/delete', [AdminController::class, 'delEventBg']);
     #edit controller
-    Route::get('/admin/{editType}/{id}',[UpdateContentsController::class, 'updateRoute']);
+    Route::get('/admin/{editType}/{id}', [UpdateContentsController::class, 'updateRoute']);
     Route::get('/club/edit', [UpdateContentsController::class, 'teamEditRoute']);
     Route::get('/coach/edit', [UpdateContentsController::class, 'caochEditRoute']);
+    #update clubs
+    Route::get('/change/{club}', [ClubsController::class, 'clubUpdateOneLever']);
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -62,7 +73,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::post('/admin/storeStudents/{club}', [ClubsController::class, 'store']);
     # update
     Route::post('/admin/edit-team/{id}/{club}', [UpdateContentsController::class, 'updateTeam']);
-    Route::post('/admin/edit-coach/{id}/{club}', [UpdateContentsController::class, 'updateCaoch']);
+    Route::post('/admin/edit-coach/{id}/{club}', [UpdateContentsController::class, 'updateCoach']);
 });
 Route::group(['prefix' => 'club'], function () {
     Route::get('/news', [DirectionController::class, 'clubNews']);

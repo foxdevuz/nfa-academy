@@ -1,4 +1,7 @@
 <x-admin.index-layout>
+    <div class="text-center">
+        <a href="/change/{{ $club }}" class="text-center fs-6 border-danger py-3 px-4">Jamoani bir pog'ona ko'tarish</a>
+    </div>
     <p class="text-center fs-3 text-capitalize">Jamoa {{ $club }}</p>
     @foreach ($coach as $item)
         <div class="card" style="width: 19rem; display:inline-block; margin: 0 1.2rem 1rem 1.2rem;">

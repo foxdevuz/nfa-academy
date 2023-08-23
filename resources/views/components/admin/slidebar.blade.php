@@ -45,7 +45,6 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/addCoach">Murabbiy qo'shish</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/addFamous">Klub Faxri qo'shish</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/addEvent">Voqea Qo'shish</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/history">Tarix qo'shish</a></li>
                         </ul>
                         </ul>
                     </li>
@@ -98,7 +97,7 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/allNews">Barcha yangiliklar</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showLider">Raxbariyat a'zolari</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showDoctors">Shifokorlar</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showCoach">Murabbiylar</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showCoach">Treynerlarimiz</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showFamous">Klub Faxriylari</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showEvent">Voqealarni ko'rish</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-11">U11</a></li>

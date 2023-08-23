@@ -70,7 +70,7 @@
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yangiliklar</a>
           <div class="dropdown-menu m-0">
-            <a href="./songiyangliklar.html" class="dropdown-item">Songi Yangiliklar</a>
+            <a href="./songiyangliklar.html" class="dropdown-item">SO'NGI YANGILIKLAR</a>
             <a href="./futbolyangliklari.html" class="dropdown-item">Futbol yangiliklar</a>
             <a href="./jahonyanglklari.html" class="dropdown-item">Jahon Futbol yangiliklari</a>
           </div>
@@ -94,7 +94,7 @@
           <div class="dropdown-menu m-0">
             <a href="service.html" class="dropdown-item">Rahbariyat</a>
             <a href="testimonial.html" class="dropdown-item">Shifokorlar</a>
-            <a href="murabbiy.html" class="dropdown-item">Murabbiylar</a>
+            <a href="murabbiy.html" class="dropdown-item">Treynerlarimiz</a>
           </div>
         </div>
         <a href="contact.html" class="nav-item nav-link">Aloqa</a>

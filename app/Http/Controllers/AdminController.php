@@ -461,4 +461,41 @@ class AdminController extends Controller
             ->back()
             ->with('success', 'Shifokor qo\'shildi');
     }
+
+    public function u11()
+    {
+        return view('admin.u11');
+    }
+    public function u12()
+    {
+        return view('admin.u12');
+    }
+    public function u13()
+    {
+        return view('admin.u13');
+    }
+    public function u14()
+    {
+        return view('admin.u14');
+    }
+    public function u15()
+    {
+        return view('admin.u15');
+    }
+    public function u16()
+    {
+        return view('admin.u16');
+    }
+    public function u17()
+    {
+        return view('admin.u17');
+    }
+    public function u18()
+    {
+        return view('admin.u18');
+    }
+    public function addFamous()
+    {
+        return view('admin.famous');
+    }
 }

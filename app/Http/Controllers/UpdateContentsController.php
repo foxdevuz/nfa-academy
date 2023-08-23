@@ -181,7 +181,7 @@ class UpdateContentsController extends Controller
                 ->with('error', $e->getMessage());
         }
     }
-    public function updateCaoch(Request $request, $id)
+    public function updateCoach(Request $request, $id)
     {
         $validate = Validator::make($request->all(), [
             'name' => ['required'],

@@ -2,8 +2,8 @@
 <div class="container-fluid about py-5">
     <div class="container">
     <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px">
-        <h2 class="text-primary font-secondary">Yaniliklar</h2>
-        <h1 class="display-4 text-uppercase">Songi yangiliklar</h1>
+        <h2 class="text-primary font-secondary">Yangiliklar</h2>
+        <h1 class="display-4 text-uppercase">SO'NGI YANGILIKLAR</h1>
     </div>
     <div class="tab-class text-center">
         <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
