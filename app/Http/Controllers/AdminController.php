@@ -9,6 +9,7 @@ use App\Models\Lider;
 use App\Models\MainPageNews;
 use App\Models\News;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -27,7 +28,9 @@ class AdminController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('error', 'Missing required felid');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required felid');
         }
         $req->file('file')->storeAs('public/images', $req->file('file')->getClientOriginalName());
 
@@ -35,9 +38,10 @@ class AdminController extends Controller
             'title' => $req->input('title'),
             'file' => $req->file('file')->getClientOriginalName(),
         ]);
-        return redirect()->back()->with('success', 'Yangilik qo\'shildi ');
+        return redirect()
+            ->back()
+            ->with('success', 'Yangilik qo\'shildi ');
     }
-    # admin panel direction btw ap = admin panel
     public function ap_showAll()
     {
         $get = MainPageNews::all();
@@ -106,7 +110,9 @@ class AdminController extends Controller
 
         News::create($data);
 
-        return redirect()->back()->with('success', 'Yangilik muvaffaqiyatli qo\'shildi');
+        return redirect()
+            ->back()
+            ->with('success', 'Yangilik muvaffaqiyatli qo\'shildi');
     }
 
     public function showNews()
@@ -121,57 +127,28 @@ class AdminController extends Controller
             'id' => ['required'],
         ]);
         if ($validation->fails()) {
-            return redirect()->back()->with('error', 'ID talab qilinadi');
+            return redirect()
+                ->back()
+                ->with('error', 'ID talab qilinadi');
         }
         $find = News::find($req->input('id'));
         if (!$find) {
-            return redirect()->back()->with('error', 'Ushbu IDdagi ma\'lumot mavjud emas');
+            return redirect()
+                ->back()
+                ->with('error', 'Ushbu IDdagi ma\'lumot mavjud emas');
         }
         Storage::delete('public/images/' . $find->file);
         $find->delete();
-        return redirect()->back()->with('success', 'Ma\'lumot o\'chirildi');
+        return redirect()
+            ->back()
+            ->with('success', 'Ma\'lumot o\'chirildi');
     }
     public function addEvent()
     {
         return view('admin.addEvent');
     }
     #club direction
-    public function u11()
-    {
-        return view('admin.u11');
-    }
-    public function u12()
-    {
-        return view('admin.u12');
-    }
-    public function u13()
-    {
-        return view('admin.u13');
-    }
-    public function u14()
-    {
-        return view('admin.u14');
-    }
-    public function u15()
-    {
-        return view('admin.u15');
-    }
-    public function u16()
-    {
-        return view('admin.u16');
-    }
-    public function u17()
-    {
-        return view('admin.u17');
-    }
-    public function u18()
-    {
-        return view('admin.u18');
-    }
-    public function addFamous()
-    {
-        return view('admin.famous');
-    }
+
     #backend
     public function deleteLider(Request $request)
     {
@@ -180,18 +157,24 @@ class AdminController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         $find = Lider::find($request->input('id'));
 
         if (!$find) {
-            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+            return redirect()
+                ->back()
+                ->with('error', "ID bo'yicha ma'lumot topilmadi");
         }
 
         Storage::delete('public/images/' . $find->file);
         $find->delete();
-        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+        return redirect()
+            ->back()
+            ->with('success', 'Ma\'lumot o\'chirldi');
     }
     public function delDocBackend(Request $request)
     {
@@ -200,18 +183,24 @@ class AdminController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         $find = Doctor::find($request->input('id'));
 
         if (!$find) {
-            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+            return redirect()
+                ->back()
+                ->with('error', "ID bo'yicha ma'lumot topilmadi");
         }
 
         Storage::delete('public/images/' . $find->file);
         $find->delete();
-        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+        return redirect()
+            ->back()
+            ->with('success', 'Ma\'lumot o\'chirldi');
     }
     public function addCoachBackend(Request $req)
     {
@@ -222,20 +211,34 @@ class AdminController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
-        #insert data
-        $req->file('file')->storeAs('public/images', $req->file('file')->getClientOriginalName());
+        try {
+            // Insert data
+            $file = $req->file('file');
+            $imageName = $file->getClientOriginalName();
+            $file->storeAs('public/images', $imageName);
 
-        Coach::create([
-            'name' => $req->input('name'),
-            'birthday' => $req->input('birthday'),
-            'image' => $req->file('file')->getClientOriginalName(),
-        ]);
+            Coach::create([
+                'name' => $req->input('name'),
+                'birthday' => $req->input('birthday'),
+                'image' => $imageName,
+                'club' => ' ',
+            ]);
 
-        return redirect()->back()->with('success', 'Murabbiy a\'zosi qo\'shildi');
+            return redirect()
+                ->back()
+                ->with('success', 'Murabbiy a\'zosi qo\'shildi');
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('error', 'Nimadir xato ketdi... Error Text: ' . $e->getMessage());
+        }
     }
+
     public function delCoachBackend(Request $request)
     {
         $validate = Validator::make($request->all(), [
@@ -243,18 +246,24 @@ class AdminController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         $find = Coach::find($request->input('id'));
 
         if (!$find) {
-            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+            return redirect()
+                ->back()
+                ->with('error', "ID bo'yicha ma'lumot topilmadi");
         }
 
         Storage::delete('public/images/' . $find->file);
         $find->delete();
-        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+        return redirect()
+            ->back()
+            ->with('success', 'Ma\'lumot o\'chirldi');
     }
     public function delFamousBackend(Request $request)
     {
@@ -263,18 +272,24 @@ class AdminController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         $find = Famous::find($request->input('id'));
 
         if (!$find) {
-            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+            return redirect()
+                ->back()
+                ->with('error', "ID bo'yicha ma'lumot topilmadi");
         }
 
         Storage::delete('public/images/' . $find->file);
         $find->delete();
-        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+        return redirect()
+            ->back()
+            ->with('success', 'Ma\'lumot o\'chirldi');
     }
     public function delEventBg(Request $request)
     {
@@ -283,18 +298,24 @@ class AdminController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         $find = Event::find($request->input('id'));
 
         if (!$find) {
-            return redirect()->back()->with('error', "ID bo'yicha ma'lumot topilmadi");
+            return redirect()
+                ->back()
+                ->with('error', "ID bo'yicha ma'lumot topilmadi");
         }
 
         Storage::delete('public/images/' . $find->file);
         $find->delete();
-        return redirect()->back()->with('success', 'Ma\'lumot o\'chirldi');
+        return redirect()
+            ->back()
+            ->with('success', 'Ma\'lumot o\'chirldi');
     }
     public function addFamousBG(Request $req)
     {
@@ -306,7 +327,9 @@ class AdminController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         #insert data
@@ -319,7 +342,9 @@ class AdminController extends Controller
             'image' => $req->file('file')->getClientOriginalName(),
         ]);
 
-        return redirect()->back()->with('success', "Ma'lumot qo'shildi");
+        return redirect()
+            ->back()
+            ->with('success', "Ma'lumot qo'shildi");
     }
     public function addEventBG(Request $req)
     {
@@ -329,7 +354,9 @@ class AdminController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         Event::create([
@@ -337,81 +364,11 @@ class AdminController extends Controller
             'time' => $req->input('time'),
         ]);
 
-        return redirect()->back()->with('success', "Ma'lumot qo'shildi");
+        return redirect()
+            ->back()
+            ->with('success', "Ma'lumot qo'shildi");
     }
     #redirect for database
-    public function showU11()
-    {
-        $get = u11::all();
-        $getCoach = CoachU11::all();
-        return view('admin.databaseClub.showu11', [
-            'all' => $get,
-            'coach' => $getCoach,
-        ]);
-    }
-    public function showU12()
-    {
-        $get = u12::all();
-        $getCoach = CoachU12::all();
-        return view('admin.databaseClub.showu12', [
-            'all' => $get,
-            'coach' => $getCoach,
-        ]);
-    }
-    public function showU13()
-    {
-        $get = u13::all();
-        $getCoach = CoachU13::all();
-        return view('admin.databaseClub.showu13', [
-            'all' => $get,
-            'coach' => $getCoach,
-        ]);
-    }
-    public function showU14()
-    {
-        $get = u14::all();
-        $getCoach = CoachU14::all();
-        return view('admin.databaseClub.showu14', [
-            'all' => $get,
-            'coach' => $getCoach,
-        ]);
-    }
-    public function showU15()
-    {
-        $get = u15::all();
-        $getCoach = CoachU15::all();
-        return view('admin.databaseClub.showu15', [
-            'all' => $get,
-            'coach' => $getCoach,
-        ]);
-    }
-    public function showU16()
-    {
-        $get = u16::all();
-        $getCoach = CoachU16::all();
-        return view('admin.databaseClub.showu16', [
-            'all' => $get,
-            'coach' => $getCoach,
-        ]);
-    }
-    public function showU17()
-    {
-        $get = u17::all();
-        $getCoach = CoachU17::all();
-        return view('admin.databaseClub.showu17', [
-            'all' => $get,
-            'coach' => $getCoach,
-        ]);
-    }
-    public function showU18()
-    {
-        $get = u18::all();
-        $getCoach = CoachU18::all();
-        return view('admin.databaseClub.showu18', [
-            'all' => $get,
-            'coach' => $getCoach,
-        ]);
-    }
     public function showLider()
     {
         $get = Lider::all();
@@ -458,7 +415,9 @@ class AdminController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         #insert data
@@ -471,7 +430,9 @@ class AdminController extends Controller
             'image' => $req->file('file')->getClientOriginalName(),
         ]);
 
-        return redirect()->back()->with('success', 'Raxbariyat a\'zosi qo\'shildi');
+        return redirect()
+            ->back()
+            ->with('success', 'Raxbariyat a\'zosi qo\'shildi');
     }
     public function addDocBackend(Request $req)
     {
@@ -482,7 +443,9 @@ class AdminController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return redirect()->back()->with('error', 'Missing required fields');
+            return redirect()
+                ->back()
+                ->with('error', 'Missing required fields');
         }
 
         #insert data
@@ -494,7 +457,8 @@ class AdminController extends Controller
             'image' => $req->file('file')->getClientOriginalName(),
         ]);
 
-        return redirect()->back()->with('success', 'Shifokor qo\'shildi');
+        return redirect()
+            ->back()
+            ->with('success', 'Shifokor qo\'shildi');
     }
-
 }

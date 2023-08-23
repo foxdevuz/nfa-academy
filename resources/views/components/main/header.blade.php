@@ -18,13 +18,14 @@
         <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jamoalar</a>
         <div class="dropdown-menu m-0" style="background: #ffffff;">
-            <a href="/club/type?id=u11" class="dropdown-item">U-11</a>
-            <a href="/club/type?id=u12" class="dropdown-item">U-12</a>
-            <a href="/club/type?id=u13" class="dropdown-item">U-13</a>
-            <a href="/club/type?id=u14" class="dropdown-item">U-14</a>
-            <a href="/club/type?id=u15" class="dropdown-item">U-15</a>
-            <a href="/club/type?id=u16" class="dropdown-item">U-16</a>
-            <a href="/club/type?id=u17" class="dropdown-item">U-17</a>
+            <a href="/club/type?id=u-11" class="dropdown-item">U-11</a>
+            <a href="/club/type?id=u-12" class="dropdown-item">U-12</a>
+            <a href="/club/type?id=u-13" class="dropdown-item">U-13</a>
+            <a href="/club/type?id=u-14" class="dropdown-item">U-14</a>
+            <a href="/club/type?id=u-15" class="dropdown-item">U-15</a>
+            <a href="/club/type?id=u-16" class="dropdown-item">U-16</a>
+            <a href="/club/type?id=u-17" class="dropdown-item">U-17</a>
+            <a href="/club/type?id=u-18" class="dropdown-item">U-18</a>
         </div>
         </div>
         <a href="/club/history" class="nav-item nav-link">Akademiya tarixi</a>
