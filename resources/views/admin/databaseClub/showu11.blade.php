@@ -9,7 +9,7 @@
             </div>
         </div>
     @endforeach
-    @foreach ($all as $item)
+    @foreach ($students as $item)
         <div class="card" style="width: 19rem; display:inline-block; margin: 0 1.2rem 1rem 1.2rem;">
             <img class="card-img-top" src="/storage/images/{{ $item->image }}" alt="Card image cap">
             <div class="card-body">

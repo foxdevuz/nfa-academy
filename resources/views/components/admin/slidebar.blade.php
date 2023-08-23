@@ -101,14 +101,14 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showCoach">Murabbiylar</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showFamous">Klub Faxriylari</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/admin/showEvent">Voqealarni ko'rish</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU11">U11</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU12">U12</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU13">U13</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU14">U14</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU15">U15</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU16">U16</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU17">U17</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/showU18">U18</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-11">U11</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-12">U12</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-13">U13</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-14">U14</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-15">U15</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-16">U16</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-17">U17</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/admin/show-team/u-18">U18</a></li>
                         </ul>
                         </ul>
                     </li>

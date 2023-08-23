@@ -35,15 +35,8 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/admin/addFamous', [AdminController::class, 'addFamous']);
     Route::get('/admin/addEvent', [AdminController::class, 'addEvent']);
     #show for database
-    Route::get('/admin/showU11', [AdminController::class, 'showU11']);
-    Route::get('/admin/showU12', [AdminController::class, 'showU12']);
-    Route::get('/admin/showU13', [AdminController::class, 'showU13']);
-    Route::get('/admin/showU14', [AdminController::class, 'showU14']);
-    Route::get('/admin/showU15', [AdminController::class, 'showU15']);
-    Route::get('/admin/showU16', [AdminController::class, 'showU16']);
-    Route::get('/admin/showU17', [AdminController::class, 'showU17']);
-    Route::get('/admin/showU18', [AdminController::class, 'showU18']);
-    
+    Route::get('/admin/show-team/{team}', [ClubsController::class, 'showTeam']);
+
     Route::get('/admin/showLider', [AdminController::class, 'showLider']);
     Route::get('/admin/showDoctors', [AdminController::class, 'showDoctor']);
     Route::get('/admin/showCoach', [AdminController::class, 'showCoach']);

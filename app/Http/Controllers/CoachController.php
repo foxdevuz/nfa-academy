@@ -11,6 +11,7 @@ class CoachController extends Controller
 {
     public function store(StoreCoachRequest $request, $club)
     {
+        
         $file = $request->file('file');
         $name = $request->coach;
         $birthday = $request->birthday;

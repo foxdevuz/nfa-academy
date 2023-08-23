@@ -24,7 +24,7 @@ class StoreCoachRequest extends FormRequest
         return [
             'coach'=>['required'],
             'birthday'=>['required'],
-            'file'=>['required']
+            'file'=>['required', 'file']
         ];
     }
 }

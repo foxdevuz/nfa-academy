@@ -10,10 +10,9 @@
 
         <label for="bg" class="form-label mt-5">Murabbiy rasmi</label>
         <input type="file" name="file" id="bg" required class="form-control">
-        <button class="btn btn-primary rounded mt-5">Joylash</button>
+        <button class="btn btn-primary rounded mt-5" type="submit">Joylash</button>
     </form>
 
-    {{-- adding club members --}}
     <form action="/admin/storeStudents/u-11" method="post" enctype="multipart/form-data" class="mt-5">
         @csrf
         <p class="text-center mt-5">U11 klubi uchun boshqaruv | O'quvchi qo'shish</p>
@@ -25,6 +24,6 @@
 
         <label for="bg" class="form-label mt-5">O'quvchi rasmi</label>
         <input type="file" name="file" id="bg" required class="form-control">
-        <button class="btn btn-primary rounded mt-5">Joylash</button>
+        <button class="btn btn-primary rounded mt-5" type="submit">Joylash</button>
     </form>
 </x-admin.index-layout>

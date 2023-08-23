@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStudentRequest;
+use App\Models\Coach;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Str;
@@ -31,5 +32,10 @@ class ClubsController extends Controller
                 ->back()
                 ->with('error', 'Nimadir xato ketdi... Error Code: ' . $e->getMessage());
         }
+    }
+    public function showTeam($team){
+       $students = User::where('club', $team)->get();
+       $coach = Coach::where('club', $team)->get();
+       return view('admin.databaseClub.showu11', ['students' => $students, 'coach' => $coach]);
     }
 }
