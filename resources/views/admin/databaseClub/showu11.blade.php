@@ -6,7 +6,10 @@
             <div class="card-body">
                 <h5 class="card-title">{{ $item->name }}</h5>
                 <h5 class="card-body">{{ $item->birthday }}</h5>
-                <a href="/coach/delete?id={{ $item->id }}&club_id={{ $club }}" class="btn btn-danger rounded">O'chirib tashlash</a>
+                <a href="/coach/delete?id={{ $item->id }}&club_id={{ $club }}"
+                    class="btn btn-danger rounded">O'chirib tashlash </a>
+                <a href="/coach/edit?id={{ $item->id }}&club_id={{ $club }}"
+                    class="btn btn-warning rounded">Tahrirlash</a>
             </div>
         </div>
     @endforeach
@@ -16,7 +19,10 @@
             <div class="card-body">
                 <h5 class="card-title">{{ $item->name }}</h5>
                 <h5 class="card-body">{{ $item->birthday }}</h5>
-                <a href="/club/delete?id={{ $item->id }}&club_id={{ $club }}" class="btn btn-danger rounded">O'chirib tashlash</a>
+                <a href="/club/delete?id={{ $item->id }}&club_id={{ $club }}"
+                    class="btn btn-danger rounded">O'chirib tashlash</a>
+                <a href="/club/edit?id={{ $item->id }}&club_id={{ $club }}"
+                    class="btn btn-warning rounded">Tahrirlash</a>
             </div>
         </div>
     @endforeach

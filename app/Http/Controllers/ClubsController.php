@@ -17,7 +17,7 @@ class ClubsController extends Controller
         $birthday = $request->birthday;
         $image = Str::random() . '.' . $file->getClientOriginalExtension();
         try {
-            $file->storeAs('/public/images' , $image);
+            $file->storeAs('/public/images', $image);
             User::create([
                 'name' => $name,
                 'birthday' => $birthday,
@@ -33,9 +33,10 @@ class ClubsController extends Controller
                 ->with('error', 'Nimadir xato ketdi... Error Code: ' . $e->getMessage());
         }
     }
-    public function showTeam($team){
-       $students = User::where('club', $team)->get();
-       $coach = Coach::where('club', $team)->get();
-       return view('admin.databaseClub.showu11', ['students' => $students, 'coach' => $coach, 'club'=>$team]);
+    public function showTeam($team)
+    {
+        $students = User::where('club', $team)->get();
+        $coach = Coach::where('club', $team)->get();
+        return view('admin.databaseClub.showu11', ['students' => $students, 'coach' => $coach, 'club' => $team]);
     }
 }

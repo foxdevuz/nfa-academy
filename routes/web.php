@@ -45,7 +45,7 @@ Route::middleware(['sessionadmin'])->group(function () {
     #delete data
     Route::get('/club/delete', [ClubController::class, 'deleteClubMember']);
     Route::get('/coach/delete', [ClubController::class, 'deleteCoach']);
-    
+
     Route::get('/lider/delete', [AdminController::class, 'deleteLider']);
     Route::get('/doctors/delete', [AdminController::class, 'delDocBackend']);
     Route::get('/coach-all/delete', [AdminController::class, 'delCoachBackend']);
@@ -53,6 +53,8 @@ Route::middleware(['sessionadmin'])->group(function () {
     Route::get('/event/delete', [AdminController::class, 'delEventBg']);
     #edit controller
     Route::get('/admin/{editType}/{id}',[UpdateContentsController::class, 'updateRoute']);
+    Route::get('/club/edit', [UpdateContentsController::class, 'teamEditRoute']);
+    Route::get('/coach/edit', [UpdateContentsController::class, 'caochEditRoute']);
 });
 #admin post Routes
 Route::middleware(['sessionadmin'])->group(function () {
@@ -67,6 +69,9 @@ Route::middleware(['sessionadmin'])->group(function () {
     #add coach
     Route::post('/admin/storeCoach/{club}', [CoachController::class, 'store']);
     Route::post('/admin/storeStudents/{club}', [ClubsController::class, 'store']);
+    # update
+    Route::post('/admin/edit-team/{id}/{club}', [UpdateContentsController::class, 'updateTeam']);
+    Route::post('/admin/edit-coach/{id}/{club}', [UpdateContentsController::class, 'updateCaoch']);
 });
 Route::group(['prefix' => 'club'], function () {
     Route::get('/news', [DirectionController::class, 'clubNews']);
