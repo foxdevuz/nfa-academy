@@ -1,4 +1,4 @@
-<x-admin.index-layout>
+<x-admin.index-layout>            
     <form action="/addEvent" method="post" enctype="multipart/form-data">
         @csrf
         <label for="event" class="form-label">Voqea qo'shish</label>

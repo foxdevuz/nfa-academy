@@ -1,4 +1,4 @@
-<div class="container-fluid bg-img py-5">
+<div class="container-fluid bg-img py-5 d-none">
     <div class="container py-5">
         <div class="row gx-5 gy-4">
             <div class="col-lg-3 col-md-6">

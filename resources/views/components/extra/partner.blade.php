@@ -6,9 +6,9 @@
       </div>
       <div class="owl-carousel testimonial-carousel">
         <div class="testimonial-item bg-dark text-white border-inner p-4">
-          <div class="d-flex align-items-center mb-3">
+          <div class="d-flex align-items-center mb-1">
             <img class="img-fluid flex-shrink-0" src="img/bezbg-.png"
-              style="width: 290px; height: 390px; object-fit: cover; margin: auto;">
+              style="width: 290px; height: 290px; object-fit: cover; margin: auto;">
           </div>
           <p class="legen_paxta">
             Legend tomonidan ajoyib yangilik kuzgi yengil futbol formalari bundaylari faqat legenda
@@ -17,7 +17,7 @@
         <div class="testimonial-item bg-dark text-white border-inner p-4">
           <div class="d-flex align-items-center mb-3">
             <img class="img-fluid flex-shrink-0" src="img/sumka-.png"
-              style="width: 290px; height: 390px; object-fit: cover; margin: auto;">
+              style="width: 290px; height: 290px; object-fit: cover; margin: auto;">
           </div>
           <p class="legen_paxta">
             Yozda Qishda kiyimlaringizni yomgirdan suvdan qoradan asrash uchun legen sumkalari
@@ -26,7 +26,7 @@
         <div class="testimonial-item bg-dark text-white border-inner p-4">
           <div class="d-flex align-items-center mb-3">
             <img class="img-fluid flex-shrink-0" src="img/forma-.png"
-              style="width: 290px; height: 390px; object-fit: cover; margin: auto;">
+              style="width: 290px; height: 290px; object-fit: cover; margin: auto;">
           </div>
           <p class="legen_paxta">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
             labore
@@ -36,7 +36,7 @@
         <div class="testimonial-item bg-dark text-white border-inner p-4">
           <div class="d-flex align-items-center mb-3">
             <img class="img-fluid flex-shrink-0" src="img/sum-.png"
-              style="width: 290px; height: 390px; object-fit: cover; margin: auto;">
+              style="width: 290px; height: 290px; object-fit: cover; margin: auto;">
           </div>
           <p class="legen_paxta">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
             labore
