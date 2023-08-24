@@ -2,7 +2,7 @@
 <div class="col-lg-4 col-md-6">
      <div class="position-relative" style="cursor: pointer;">
             <img  style="height: 150px; width: 150px; filter: blur(0); border-radius:50%; margin-left:6pc"
-                src="/storage/images/{{ $doc->image }}" alt="">
+                src="/public/storage/images/{{ $doc->image }}" alt="">
             <div
                 class="team-overlay position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
             </div>
