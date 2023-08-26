@@ -35,7 +35,7 @@
         <div class="dropdown-menu m-0">
             <a href="/club/liders" class="dropdown-item">Rahbariyat</a>
             <a href="/club/doctors" class="dropdown-item">Shifokorlar</a>
-            <a href="/club/coachs" class="dropdown-item">Treynerlarimiz</a>
+            <a href="/club/coachs" class="dropdown-item">Trenerlarimiz</a>
         </div>
         </div>
         <a href="/contact" class="nav-item nav-link">Aloqa</a>

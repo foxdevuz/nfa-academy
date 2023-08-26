@@ -94,7 +94,7 @@
           <div class="dropdown-menu m-0">
             <a href="service.html" class="dropdown-item">Rahbariyat</a>
             <a href="testimonial.html" class="dropdown-item">Shifokorlar</a>
-            <a href="murabbiy.html" class="dropdown-item">Treynerlarimiz</a>
+            <a href="murabbiy.html" class="dropdown-item">Trenerlarimiz</a>
           </div>
         </div>
         <a href="contact.html" class="nav-item nav-link">Aloqa</a>

@@ -1,7 +1,7 @@
 <x-admin.index-layout>
     @foreach ($doctor as $item)
         <div class="card" style="width: 19rem; display:inline-block; margin: 0 1.2rem 1rem 1.2rem;">
-            <img class="card-img-top" src="/public/storage/images/{{ $item->image }}" alt="Card image cap">
+            <img class="card-img-top" src="/storage/images/{{ $item->image }}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ $item->name }}</h5>
                 <h6 class="card-body">Tug'ilgan kuni: {{ $item->birthday }}</h6>

@@ -395,10 +395,9 @@ img {
 }
 
 .offer_image {
-    width: 200px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 25px;
 }
 
 .textni h1 {
@@ -407,13 +406,12 @@ img {
 }
 
 .salom {
-    height: 230px;
     width: 100%;
+    height: 250px;
     text-align: center;
     object-fit: cover;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     font-style: italic;
-    background: url("../img//red-black-brush-stroke-banner-background-perfect-canva.jpg");
 }
 
 .textni h1:hover {

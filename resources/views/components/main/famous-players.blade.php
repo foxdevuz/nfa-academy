@@ -9,7 +9,7 @@
       <div class="row gx-5">
         <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px">
           <div class="position-relative h-100">
-            <img class="position-absolute w-100 h-100" src="/public/storage/images/{{ $famous->image }}" style="object-fit: cover" />
+            <img class="position-absolute w-100 h-100" src="/storage/images/{{ $famous->image }}" style="object-fit: cover" />
           </div>
         </div>
         <div class="col-lg-6 pb-5">

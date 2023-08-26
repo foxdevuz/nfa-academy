@@ -1,5 +1,5 @@
 <x-admin.index-layout>
-    <p class="text-center">Treynerlarimiz ro'yxatini yangilash</p>
+    <p class="text-center">Trenerlarimiz ro'yxatini yangilash</p>
     <form action="/addCoach" method="post" enctype="multipart/form-data">
         @csrf
         <label for="name" class="form-label">Murabbiy ismi</label>

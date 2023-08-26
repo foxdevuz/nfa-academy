@@ -2,11 +2,7 @@
     <div class="row gx-0">
         <div class="salom col-lg-4 py-3">
             <a href="/" class="navbar-brand">
-                <div class="textni">
-                    <h1> Namangan
-                        <img class="offer_image" src="/img/JDHFBD.png  " alt=""> Football Academy
-                    </h1>
-                </div>
+                <img src="/img/44.png" alt="Nfa academy" class="img-fluid">
             </a>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <x-admin.index-layout>
-    <p class="text-center fs-4 text-capitalize">Tahrirash | Treynerlarimiz {{ $club }}</p>
+    <p class="text-center fs-4 text-capitalize">Tahrirash | Trenerlarimiz {{ $club }}</p>
     <form action="/admin/edit-coach/{{ $id }}/{{ $club }}" enctype="multipart/form-data" method="POST">
         @csrf
         <label for="name" class="form-label">Ismi</label>
