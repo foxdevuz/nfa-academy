@@ -11,6 +11,8 @@
     use App\Http\Controllers\UpdateContentsController;
     use Illuminate\Support\Facades\Route;
 
+    
+    Route::get('/lang/{lan}', [LocalizationController::class, 'changeLang']);
     Route::get('/', [MainViewController::class, 'index']);
     #admin get Routes
     Route::middleware(['sessionadmin'])->group(function () {
@@ -90,4 +92,3 @@
     Route::get('/breaking-news', [DirectionController::class, 'breakingNews']);
     Route::get('/news', [DirectionController::class, 'showNews']);
     Route::post('/sendMessage', [TelegramBotController::class, 'sendMessage']);
-    Route::get('/lang/{lan}', [LocalizationController::class, 'changeLang']);
