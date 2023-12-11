@@ -13,6 +13,13 @@
       0 => 'Codeat3\\BladeAcademicons\\BladeAcademiconsServiceProvider',
     ),
   ),
+  'davidhsianturi/blade-bootstrap-icons' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Davidhsianturi\\BladeBootstrapIcons\\BladeBootstrapIconsServiceProvider',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
