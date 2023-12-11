@@ -1,0 +1,12 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix"
+    },
+    "devDependencies": {
+        "bootstrap-icons": "^1.10.3",
+        "cross-env": "^7.0.3",
+        "laravel-mix": "^6.0.49"
+    }
+}
