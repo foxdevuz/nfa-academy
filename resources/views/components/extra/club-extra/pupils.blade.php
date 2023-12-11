@@ -10,7 +10,7 @@
         </div>
         <div
             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-            <h5 class="text-uppercase">Malumotlar</h5>
+            <h5 class="text-uppercase">{{ @trans('extras.teams_title') }}</h5>
             <span>{{ $student->name }}</span>
             <span>Tug'ulgan kuni: {{ $student->birthday }}</span>
         </div>

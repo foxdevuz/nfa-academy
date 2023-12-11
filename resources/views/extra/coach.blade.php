@@ -2,8 +2,8 @@
     <div class="container-fluid py-5">
         <div class="container">
             <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
-                <h2 class="text-primary font-secondary">Our Coaches</h2>
-                <h1 class="display-4 text-uppercase">Trenerlarimiz</h1>
+                <h2 class="text-primary font-secondary">{{ @trans('extras.our_coaches') }}</h2>
+                <h1 class="display-4 text-uppercase">{{ @trans('extras.coach') }}</h1>
             </div>
             <div class="row g-5">
                 @foreach ($coaches as $coach)

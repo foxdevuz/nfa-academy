@@ -2,16 +2,16 @@
 <div class="container-fluid about py-5">
     <div class="container">
     <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px">
-        <h2 class="text-primary font-secondary">Yangiliklar</h2>
-        <h1 class="display-4 text-uppercase">SO'NGI YANGILIKLAR</h1>
+        <h2 class="text-primary font-secondary">{{ @trans('main.sub_news_title') }}</h2>
+        <h1 class="display-4 text-uppercase">{{ @trans('main.news') }}</h1>
     </div>
     <div class="tab-class text-center">
         <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
             <li class="nav-item">
-                <a class="nav-link text-white active" data-bs-toggle="pill" href="#tab-1">Birinchi yangiliklar</a>
+                <a class="nav-link text-white active" data-bs-toggle="pill" href="#tab-1">{{ @trans('main.first_news') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Akademiya yangiliklar</a>
+                <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">{{ @trans('main.academy_news') }}</a>
             </li>
         </ul>
         <div class="tab-content">

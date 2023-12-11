@@ -7,17 +7,16 @@
                     <div id="map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1127.1762175064925!2d71.58925281270938!3d41.0027005765373!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1692783878541!5m2!1sen!2s" width="300" height="400" style="border:0; margin:auto;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
-                    </div>                   
+                    </div>
                 </div>
             </div>
             <div class="col-lg-8 col-md-6">
                 <div class="row gx-5">
                     <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                        <h4 class="text-primary text-uppercase mb-4">Bog'lanish</h4>
+                        <h4 class="text-primary text-uppercase mb-4">{{ @trans('footer.contact') }}</h4>
                         <div class="d-flex mb-2">
                             <i class="bi bi-geo-alt text-primary me-2"></i>
-                            <span>Namangan shahar Davlatabod tumani 1-kichik noxiya mustaqillik MFY <br>Navbahor
-                                ko'cha 15-uy</span>
+                            <span>{{ @trans('footer.location') }}</span>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-envelope-open text-primary me-2"></i>
@@ -29,29 +28,29 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                        <h4 class="text-primary text-uppercase mb-4">Sayt xaritasi</h4>
+                        <h4 class="text-primary text-uppercase mb-4">{{ @trans('footer.site_map') }}</h4>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-secondary mb-2" href="/">
                                 <i class="bi bi-arrow-right text-primary me-2"></i>
-                                Asosiy
+                                {{ @trans('header.main') }}
                             </a>
                             <a class="text-secondary mb-2" href="/breaking-news">
-                                <i class="bi bi-arrow-right text-primary me-2"></i>Yangliklar
+                                <i class="bi bi-arrow-right text-primary me-2"></i>{{ @trans('header.news') }}
                             </a>
                             <a class="text-secondary mb-2" href="/club/type?id=u11">
                                 <i class="bi bi-arrow-right text-primary me-2"></i>
-                                Jamoalar
+                                {{ @trans('header.teams') }}
                             </a>
                             <a class="text-secondary mb-2" href="/club/history"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>
-                                Akdemiya tarixi
+                                {{ @trans('header.history') }}
                             </a>
                             <a class="text-secondary mb-2" href="/club/liders">
                                 <i class="bi bi-arrow-right text-primary me-2"></i>
-                                Rahbariyat
+                                {{ @trans('header.headquarter') }}
                             </a>
                             <a class="text-secondary mb-2" href="/contact">
-                                <i class="bi bi-arrow-right text-primary me-2"></i>Aloqa
+                                <i class="bi bi-arrow-right text-primary me-2"></i>{{ @trans('header.contact') }}
                             </a>
                         </div>
                     </div>

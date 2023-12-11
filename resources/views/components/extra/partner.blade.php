@@ -2,7 +2,7 @@
     <div class="container">
       <div class="section-title position-relative text-center mx-auto mb-5 pb-3 " style="max-width: 600px;">
         <h2 class="text-primary legeng_text">Legend</h2>
-        <h1 class="display-4 text-uppercase">Ishonchli Tanlov!!!</h1>
+        <h1 class="display-4 text-uppercase">{{ @trans('main.legend') }}</h1>
       </div>
       <div class="owl-carousel testimonial-carousel">
         <div class="testimonial-item bg-dark text-white border-inner p-4">

@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'main' => 'Asosiy',
-    'news' => 'Yangiliklar',
-    'teams' => 'Jamoalar',
-    'history'=>"Akademiya tarixi",
-    'headquarter'=>"Raxbarlar",
-    'coach'=>"Trenerlarimiz",
-    'doctor'=>"Shifokorlar",
-    'contact'=>"Aloqa"
+    'main' => 'Главная',
+    'news' => 'Новости',
+    'teams' => 'Команды',
+    'history' => 'История академии',
+    'headquarter' => 'Штаб',
+    'coach' => 'Наши тренеры',
+    'doctor' => 'Наши врачи',
+    'contact' => 'Контакты',
 ];
