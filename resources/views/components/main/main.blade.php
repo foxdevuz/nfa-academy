@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="utf-8" />
         <title>Namangan Futbol Akademiyasi</title>
@@ -8,7 +7,7 @@
         <meta content="Namangan foutbol akademiyasi" name="keywords" />
         <meta content="Namangan foutbol akademiyasi" name="description" />
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon" />
+        <link href="/public/img/favicon.ico" rel="icon" />
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,43 +23,38 @@
             integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Libraries Stylesheet -->
-        <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+        <link href="{{ asset("/lib/owlcarousel/assets/owl.carousel.min.css") }}" rel="stylesheet" />
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="{{ asset("/css/bootstrap.min.css") }}" rel="stylesheet" />
         <!-- Template Stylesheet -->
-        <link href="/css/style.css" rel="stylesheet" />
+        <link href="{{ asset('/css/style.css') }}" rel="stylesheet" />
         <style>
-        /* Custom dark mode styles */
-        .ck.ck-editor {
-            background-color: #333;
-            color: #fff;
-        }
+            .ck.ck-editor {
+                background-color: #333;
+                color: #fff;
+            }
 
-        .ck.ck-editor__editable {
-            color: #000;
-            height: 250px;
-        }
+            .ck.ck-editor__editable {
+                color: #000;
+                height: 250px;
+            }
 
-        /* ===== Scrollbar CSS ===== */
-        /* Firefox */
-        * {
-            scrollbar-width: auto;
-            scrollbar-color: #515157 #ffffff;
-        }
+            * {
+                scrollbar-width: auto;
+                scrollbar-color: #515157 #ffffff;
+            }
+            *::-webkit-scrollbar {
+                width: 5px;
+            }
 
-        /* Chrome, Edge, and Safari */
-        *::-webkit-scrollbar {
-            width: 5px;
-        }
+            *::-webkit-scrollbar-track {
+                background: #ffffff;
+            }
 
-        *::-webkit-scrollbar-track {
-            background: #ffffff;
-        }
-
-        *::-webkit-scrollbar-thumb {
-            background-color: #515157;
-            border-radius: 1px;
-        }
+            *::-webkit-scrollbar-thumb {
+                background-color: #515157;
+                border-radius: 1px;
+            }
         </style>
     </head>
 
@@ -74,11 +68,11 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="/lib/easing/easing.min.js"></script>
-        <script src="/lib/waypoints/waypoints.min.js"></script>
-        <script src="/lib/counterup/counterup.min.js"></script>
-        <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="/js/main.js"></script>
+        <script src="{{ asset('/lib/easing/easing.min.js') }}"></script>
+        <script src="{{ asset('/lib/waypoints/waypoints.min.js') }}"></script>
+        <script src="{{ asset('/lib/counterup/counterup.min.js') }}"></script>
+        <script src="{{ asset('/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
     </body>
 
 </html>

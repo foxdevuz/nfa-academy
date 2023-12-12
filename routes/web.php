@@ -12,6 +12,7 @@
     use Illuminate\Support\Facades\Route;
 
     
+
     Route::get('/lang/{lan}', [LocalizationController::class, 'changeLang']);
     Route::get('/', [MainViewController::class, 'index']);
     #admin get Routes
